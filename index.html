@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Clark - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/vian.css">
+    <link rel="stylesheet" href="css/vian2.css">
+
+    <style>
+        /* CSS FIX: Mencegah scroll horizontal */
+        html, body {
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+        }
+
+        /* KHUSUS MOBILE: Menaikkan posisi teks Hero agar tidak menutupi wajah */
+        @media (max-width: 767.98px) {
+            .hero .slider-item .one-forth {
+                /* Mengubah alignment dari center ke start (atas) */
+                align-items: flex-start !important; 
+                /* Memberikan jarak dari atas agar tidak terlalu mepet header */
+                padding-top: 100px; 
+            }
+            
+            .hero .slider-item .text {
+                /* Memastikan teks naik */
+                margin-top: 0 !important;
+            }
+            
+            /* Menyesuaikan posisi background image di mobile jika perlu */
+            .hero .slider-item .one-third {
+                background-position: center bottom !important;
+                background-size: cover;
+                height: 100vh; /* Memastikan gambar full height di belakang */
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: -1;
+            }
+        }
+        .project {
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        transition: all 0.3s ease-in-out;
+        border-radius: 5px;
+        overflow: hidden;
+        }
+
+        .project .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0,0,0,0.6);
+        opacity: 0;
+        transition: 0.3s;
+        border-radius: 5px;
+        z-index: 1;
+        }
+
+        .project:hover .overlay {
+        opacity: 0.7;
+        }
+
+        .ftco-section {
+        padding: 50px 0;
+        }
+        
+            .nav-link i {
+            font-size: 30px; /* Ukuran ikon */
+            transition: 0.3s;
+        }
+
+        .nav-link i:hover {
+            color: #ffbd39; /* Warna kuning khas template Clark saat di-hover */
+        }
+
+        /* Pastikan di tampilan mobile ikon tetap berbaris menyamping */
+        @media (max-width: 991.98px) {
+            .navbar-nav.flex-row {
+                justify-content: center;
+                margin-top: 20px;
+            }
+        }
+
+            /* Memastikan kontainer navigasi menggunakan seluruh lebar yang tersedia */
+        .navbar-collapse {
+            justify-content: flex-end;
+        }
+
+        /* Menghilangkan padding berlebih khusus untuk ikon agar muat satu baris */
+        .navbar-nav .nav-item .nav-link {
+            padding-left: 10px !important;
+            padding-right: 10px !important;
+        }
+
+        /* Memastikan ikon tetap menyamping bahkan di layar kecil jika diinginkan */
+        .d-flex .nav-link {
+            display: inline-block !important;
+        }
+
+        /* Ukuran ikon agar pas dengan teks menu */
+        .fa {
+            font-size: 25px;
+            vertical-align: middle;
+        }
+
+                /* Menghilangkan padding default link agar pas di samping nama */
+        .nav-link-icon {
+            color: #fff !important;
+            font-size: 16px;
+            margin-left: 12px;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .nav-link-icon:hover {
+            color: #ffbd39 !important; /* Warna kuning template kamu */
+        }
+
+        /* Memastikan kontainer utama tidak membungkus ke bawah */
+        .navbar .container {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            margin-bottom: 10px !important;
+        }
+
+        /* Penyesuaian Mobile agar tidak sesak */
+        @media (max-width: 767.98px) {
+            .navbar-brand {
+                font-size: 23px; /* Kecilkan font nama sedikit di mobile */
+                margin-right: 5px !important;
+            }
+            
+            .nav-link-icon {
+                margin-left: 8px;
+                font-size: 14px;
+            }
+        }
+
+                .typed-cursor {
+            color: #ffbd39;
+            font-size: inherit;
+        }
+            .typed-cursor {
+            color: #ffbd39;
+            opacity: 1;
+            -webkit-animation: blink 0.7s infinite;
+            -moz-animation: blink 0.7s infinite;
+            animation: blink 0.7s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+      
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+    <div class="container">
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand mr-3" href="index.html">MUHAMAD LUTHFIAN</a>
+            
+            <div class="nav-social-icons d-flex align-items-center">
+                <a href="mailto:diputviean109@gmail.com" class="nav-link-icon"><i class="fa fa-envelope"></i></a>
+                <a href="https://www.instagram.com/vnnvyn/" class="nav-link-icon"><i class="fa fa-instagram"></i></a>
+                <a href="https://github.com/viann980" class="nav-link-icon"><i class="fa fa-github"></i></a>
+            </div>
+        </div>
+
+        <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="oi oi-menu"></span> Menu
+        </button>
+
+        <div class="collapse navbar-collapse" id="ftco-nav">
+            <ul class="navbar-nav nav ml-auto">
+                <li class="nav-item"><a href="#Home" class="nav-link"><span>Home</span></a></li>
+                <li class="nav-item"><a href="#About" class="nav-link"><span>About Me</span></a></li>
+                <li class="nav-item"><a href="#Experience" class="nav-link"><span>Experience</span></a></li>
+                <li class="nav-item"><a href="#Softskill" class="nav-link"><span>Softskill</span></a></li>
+                <li class="nav-item"><a href="#Skills" class="nav-link"><span>Skills</span></a></li>
+                <li class="nav-item"><a href="#Projects" class="nav-link"><span>Projects</span></a></li>
+                <li class="nav-item"><a href="#Contact" class="nav-link"><span>Contact</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+      <section id="Home" class="hero">
+          <div class="home-slider  owl-carousel">
+          <div class="slider-item ">
+            <div class="overlay"></div>
+            <div class="container">
+              <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+                <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/viann1.png);">
+                    <div class="overlay"></div>
+                </div>
+                  <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+                    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+                    <script>
+                    // Efek mengetik untuk Nama
+                    var typedName = new Typed('#typed-name', {
+                        strings: ['Muhamad Luthfian'], // Nama kamu
+                        typeSpeed: 100,
+                        backSpeed: 50,
+                        loop: false, // Nama cukup diketik sekali saja agar elegan
+                        showCursor: false,
+                        cursorChar: '|'
+                    });
+
+                    // Efek mengetik untuk Profesi
+                    var typedJob = new Typed('#typed-job', {
+                        strings: [
+                        'FrontEnd Developer', 
+                        ], // Bisa diisi banyak profesi bergantian
+                        typeSpeed: 70,
+                        backSpeed: 40,
+                        backDelay: 2000, // Jeda sebelum menghapus teks
+                        loop: true, // Profesi berulang terus
+                        showCursor: true,
+                        cursorChar: '|'
+                    });
+
+                    var typedMotion = new Typed('#typed-motion', {
+                        strings: [
+                        'Illustrations Artist Design', 
+                        ], // Bisa diisi banyak profesi bergantian
+                        typeSpeed: 100,
+                        backSpeed: 50, 
+                        loop: true, // Nama cukup diketik sekali saja agar elegan
+                        showCursor: true,
+                        cursorChar: '|'    
+                    });
+                    </script>
+
+                   <div class="text">
+                        <span class="subheading">Hello</span>
+                        <h1 class="mb-4 mt-3">I'm <span id="typed-name" style="color: #ffbd39;"></span></h1>
+                        <h2 class="mb-4"><span id="typed-job"></span></h2>
+                        <p>
+                            <a href="https://github.com/viann980" class="btn btn-primary py-3 px-4">My Program Project</a> 
+                            <a href="#" class="btn btn-white btn-outline-white py-3 px-4">CV</a>
+                        </p>
+                    </div>
+                  </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="slider-item">
+            <div class="overlay"></div>
+            <div class="container">
+              <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+                <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/vian5.png);">
+                    <div class="overlay"></div>
+                </div>
+
+              <div class="one-forth d-flex align-items-center ftco-animate" data-scrollax="properties: { translateY: '70%' }">
+                <div class="text">
+                    <span class="subheading">Hello</span>
+                    <h1 class="mb-4 mt-3">I'm a <span id="typed-motion" style="color: #ffbd39;"></span></h1>
+                    <p>
+                        <a href="desian.html" class="btn btn-primary py-3 px-4">My Project Desain</a> 
+                        <a href="#About" class="btn btn-white btn-outline-white py-3 px-4">About</a>
+                    </p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <section class="ftco-about img ftco-section ftco-no-pb" id="About">
+        <div class="container">
+            <div class="row d-flex">
+                <div class="col-md-6 col-lg-5 d-flex">
+                    <div class="img-about img d-flex align-items-stretch">
+                        <div class="overlay"></div>
+                        <div class="img d-flex align-self-stretch align-items-center" style="background-image:url(images/viann2.png);">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+                    <div class="row justify-content-start pb-3">
+                  <div class="col-md-12 heading-section ftco-animate">
+                    <h1 class="big">About</h1>
+                    <h2 class="mb-4">About Me</h2>
+                    <p style="text-align: justify">Hai, Let me introduce myself, my name is Muhammad Luthfian, I was born on September 15 2002, my hobby since I was little was drawing, then I developed it at a vocational high school with a multimedia study program with basic graphic design, illustration, motion and editing, I am currently studying at Indonesian Human Development University campus, by taking a software engineering study program and combining multimedia science with software engineering.</p>
+                    <ul class="about-info mt-4 px-md-0 px-2">
+                        <li class="d-flex"><span>Name:</span> <span>Muhamad Luthfian</span></li>
+                        <li class="d-flex"><span>Date of birth:</span> <span>September 15, 2002</span></li>
+                        <li class="d-flex"><span>Address:</span> <span>Pasir Gadung, GriyaYasa, Cikupa Tangerang</span></li>
+                        <li class="d-flex"><span>Email:</span> <span>vnvlnxn@gmail.com</span></li>
+                        <li class="d-flex"><span>Phone: </span> <span>+62 85771912060</span></li>
+                        <li class="d-flex"><span>Prody: </span> <span>Software engineering</span></li>
+                    </ul>
+                  </div>
+                </div>
+              <div class="counter-wrap ftco-animate d-flex mt-md-3">
+              <div class="text">
+                <p class="mb-4">
+                    <span class="number" data-number="10">0</span>
+                    <span>Project complete</span>
+                </p>
+                <p><a href="https://github.com/viann980" class="btn btn-primary py-3 px-3">Project Me</a></p>
+              </div>
+              </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pb" id="Experience">
+        <div class="container">
+            <div class="row justify-content-center pb-5">
+          <div class="col-md-10 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Experience</h1>
+            <h2 class="mb-4">Experience</h2>
+            <p>HI, This is my experience while working on projects at school, university and work experience, I also work on web design and graphic design projects outside of educational hours, here are the results of my projects.</p>
+          </div>
+        </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="resume-wrap ftco-animate">
+                        <style>
+                            .resume-wrap {
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                            border-radius: 8px;
+                            padding: 20px;
+                            margin: 20px;
+                            background-color:rgba(255, 255, 255, 0.1);
+                            max-width: 600px;
+                            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+                        }
+                        .resume-wrap .date {
+                            font-weight: bold;
+                            color: #ffc107;
+                        }
+                        .resume-wrap img {
+                            display: block;
+                            margin: 10px 0;
+                        }
+                        .resume-wrap h2 {
+                            font-size: 1.5em;
+                            color: #ffffff;
+                            margin: 10px 0;
+                        }
+                        .resume-wrap .position {
+                            font-style: none;
+                            color: #777;
+                        }
+                        .resume-wrap p {
+                            text-align: justify;
+                            line-height: 1.6;
+                        }
+                        .resume-wrap a {
+                            color: #ffc107;
+                            text-decoration: none;
+                        }
+                        .resume-wrap a:hover {
+                            text-decoration: underline;
+                        }
+                        </style>
+                        <span class="date">2017-2020</span>
+                        <img src="bam.png" alt="#" style="max-width: 15%; height: auto;">
+                        <a href="https://smkbam.sch.id/" target="_blank"><h2>SMK BINA AM-MAMUR</h2></a>
+                        <span class="position">VOCATIONAL SCHOOL</span>
+                        <p class="mt-4"style="text-align: justify">When I was in vocational school I majored in multimedia, in this major I honed my soft skills in the multimedia field such as graphic design, visual effects editing, video and audio editing, compositing and illustration. I have also won second place in the graphic design competition at the Tangerang district level and several other projects. The project can be seen in the project navbar</p>
+                    </div>
+                    <div class="resume-wrap ftco-animate">
+                        <span class="date">2023 - 2027</span>
+                        <img src="logo unipi.png" alt="#" style="max-width: 15%; height: auto;">
+                        <a href="https://unipem.ac.id/" target="_blank"><h2>Universitas Insan Pembangunan Indonesia</h2></a>
+                        <span class="position">University Collage</span>
+                        <p class="mt-4"style="text-align: justify">I studied higher education at the Indonesian Development Human University which is located on the Serang Bitung highway, Tangerang. I studied at this campus taking a software engineering study program, In software engineering I learned about databases, web development, algorithms and other computer devices, my experience on campus was establishing a software engineering student association, , I serve as chairman, the purpose of this association was formed to build a forum for SE students <a href="https://www.instagram.com/hmse_unipi/" target="_blank">@hmse.unipi</a>, in the association I worked on several simple coding and database projects as well as other productive activities, The following is a portofolio of software engineering student association project in the form of a website <a href="https://hmse-unipi.or.id/" target="_blank">hmse-unipi.or.id</a></p>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="resume-wrap ftco-animate">
+                        <span class="date">2020-2021</span>
+                        <img src="Logo matahari.png" alt="#" style="max-width: 20%; height: auto;">
+                        <a href="https://mataharileisure.co.id/" target="_blank"><h2>PT MATAHARI LEISURE</h2></a>
+                        <span class="position">Company</span>
+                        <p class="mt-4"style="text-align: justify">PT Matahari Leisure is a joint venture between PT Matahari Putra Prima (the best retail pioneer in Indonesia/Lippo Group) and Helix Leisure as an out-of-home entertainment technology operator, offering revenue management systems, point of sale solutions, debit cards, ticket solutions, electronic locker systems , and entertainment and arcade games. My experience at this PT is as an assembly operator, making special designs for items that you want to make and assembling cables for items. I worked for 2 years.</p>
+                    </div>
+                    <div class="resume-wrap ftco-animate">
+                        <span class="date">2021-2027</span>
+                        <img src="logo arsi.png" alt="#" style="max-width: 20%; height: auto;">
+                        <a href="https://www.htagroup.co.id/company-group/pt-arai-rubber-seal-indonesia" target="_blank"><h2>PT ARAI RUBBER SEAL</h2></a>
+                        <span class="position">company</span>
+                        <p class="mt-4"style="text-align: justify">PT Arai Rubber Seal Indonesia (ARSI) is a company engaged in manufacturing (synthetic rubber industry) which produces automotive components and other finished goods, Seal and Metal Manufacturing, supported by modern technology, PT. ARS INDONESIA produces Oil Level Gauges and Joint Carburetors, our products are widely used in a wide spectrum, including two and four wheeled vehicles, as well as seals, general industrial packaging, machines and other office equipment such as photocopier rolls. My experience at PT Arai Rubber Seal is as a compounding operator, making rubber materials from the initial stage to the production process stage</p>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6 text-center ftco-animate">
+                    <p><a href="#" class="btn btn-primary py-4 px-5">Download CV</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ftco-section ftco-no-pb" id="Softskill">
+        <div class="container">
+            <div class="row justify-content-center py-5 mt-5">
+          <div class="col-md-12 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Services</h1>
+            <h2 class="mb-4">Services</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+          </div>
+        <div class="row justify-content-center">
+			<div class="col-md-6 text-center d-flex ftco-animate">
+			  <a  class="services-1">
+							<span class="icon">
+								<i class="flaticon-analysis"></i>
+							</span>
+							<div class="desc">
+							<h3 class="mb-5"><i class="bi bi-check2-all"></i>Time Management</h3>
+							<h3 class="mb-5"><i class="bi bi-check2-all"></i>Honest and Responsible</h3>
+							<h3 class="mb-5"><i class="bi bi-check2-all"></i>Problem Solving</h3>
+							<h3 class="mb-5"><i class="bi bi-check2-all"></i>Creativity</h3>
+							</div>
+						</a>
+					</div>
+					<div class="col-md-6 text-center d-flex ftco-animate">
+						<a  class="services-1">
+							<span class="icon">
+								<i class="flaticon-ideas"></i>
+							</span>
+							<div class="desc">
+								<h3 class="mb-5"><i class="fi fi-rr-brightness"></i>Learn Independently</h3>
+								<h3 class="mb-5"><i class="fi fi-rr-brightness"></i>Able To Work Individually and In a Team</h3>
+								<h3 class="mb-5"><i class="fi fi-rr-brightness"></i>Open Mindedness</h3>
+							
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+        </div>
+    </section>
+
+        
+   <section class="ftco-section" id="Skills">
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <h1 class="big big-2">Skills</h1>
+                <h2 class="mb-4">My Skills</h2>
+            </div>
+        </div>
+
+        <style>
+            .progress-wrap {
+                width: 100%;
+                margin-bottom: 30px;
+            }
+            .skill-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                margin-bottom: 10px;
+            }
+            .skill-header h3 {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 0;
+                color: #fff;
+            }
+            .skill-logos-inline {
+                display: flex;
+                gap: 8px;
+            }
+            .skill-logos-inline img {
+                width: 22px;
+                height: 22px;
+                object-fit: contain;
+                transition: transform 0.3s;
+                filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+            }
+            .skill-logos-inline img:hover {
+                transform: scale(1.4);
+            }
+            
+            @media (max-width: 767.98px) {
+                .skill-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                .skill-logos-inline {
+                    margin-top: 8px;
+                }
+            }
+        </style>
+
+        <div class="row">
+            <div class="col-md-6 animate-box">
+                <div class="progress-wrap ftco-animate">
+                    <div class="skill-header">
+                        <h3>Web Development</h3>
+                        <div class="skill-logos-inline">
+                            <img src="images/js.png" alt="JS">
+                            <img src="images/logo-ai.png" alt="AI">
+                            <img src="images/logo-figma.png" alt="Figma">
+                            <img src="images/logo-canva.png" alt="Canva">
+                            <img src="images/logo-lr.png" alt="LR">
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="90"
+                        aria-valuemin="0" aria-valuemax="100" style="width:90%">
+                            <span>90%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 animate-box">
+                <div class="progress-wrap ftco-animate">
+                    <div class="skill-header">
+                        <h3>HTML5</h3>
+                        <div class="skill-logos-inline">
+                            <img src="images/logo-html.png" alt="HTML">
+                            <img src="images/logo-css.png" alt="CSS">
+                            <img src="images/logo-js.png" alt="JS">
+                            <img src="images/logo-bs.png" alt="Bootstrap">
+                            <img src="images/logo-sass.png" alt="Sass">
+                        </div>
+                    </div>
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="95"
+                            aria-valuemin="0" aria-valuemax="100" style="width:95%">
+                            <span>95%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+
+    <section class="ftco-section ftco-project" id="Projects">
+    <div class="container">
+        <div class="row justify-content-center pb-5">
+            <div class="col-md-12 heading-section text-center ftco-animate">
+                <h1 class="big big-2">Projects</h1>
+                <h2 class="mb-4">Our Projects</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+          </div>
+        </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/webproject1.png);">
+                        <div class="overlay"></div>
+                        <div class="text text-center p-4">
+                            <h3><a href="https://gymmmasterfiit.netlify.app/">Branding &amp; Illustration Design</a></h3>
+                            <span>Web Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/webproject2.png);">
+                        <div class="overlay"></div>
+                        <div class="text text-center p-4">
+                            <h3><a href="https://portofolio1-vian.netlify.app/">Branding &amp; Illustration Design</a></h3>
+                            <span>Web Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/webproject3.png);">
+                        <div class="overlay"></div>
+                        <div class="text text-center p-4">
+                            <h3><a href="http://insan-ai.id/">Branding &amp; Illustration Design</a></h3>
+                            <span>Web Design</span>
+                        </div>
+                    </div>
+
+                    <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/pizza.jpg);">
+                        <div class="overlay"></div>
+                        <div class="text text-center p-4">
+                            <h3><a href="#">Branding &amp; Illustration Design</a></h3>
+                            <span>Web Design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/pohon.jpg);">
+                                <div class="overlay"></div>
+                                <div class="text text-center p-4">
+                                    <h3><a href="#">Branding &amp; Illustration Design</a></h3>
+                                    <span>Web Design</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/pensil.jpg);">
+                                <div class="overlay"></div>
+                                <div class="text text-center p-4">
+                                    <h3><a href="#">Branding &amp; Illustration Design</a></h3>
+                                    <span>Web Design</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6 text-center ftco-animate">
+                    <p><a href="desian.html" class="btn btn-primary py-4 px-5">My Project Illustration</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <section class="ftco-section contact-section ftco-no-pb" id="Contact">
+    <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <h1 class="big big-2">Contact</h1>
+                <h2 class="mb-4">Contact Me</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
+          </div>
+        </div>
+
+        <div class="row d-flex contact-info mb-5">
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div class="align-self-stretch box p-4 text-center">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="icon-map-signs"></span>
+                </div>
+                <h3 class="mb-4">Address</h3>
+                <p>198 West 21th Street, Suite 721 New York NY 10016</p>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div class="align-self-stretch box p-4 text-center">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="icon-phone2"></span>
+                </div>
+                <h3 class="mb-4">Contact Number</h3>
+                <p><a href="tel://1234567920">+ 1235 2355 98</a></p>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div class="align-self-stretch box p-4 text-center">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="icon-paper-plane"></span>
+                </div>
+                <h3 class="mb-4">Email Address</h3>
+                <p><a href="mailto:info@yoursite.com">info@yoursite.com</a></p>
+              </div>
+          </div>
+          <div class="col-md-6 col-lg-3 d-flex ftco-animate">
+            <div class="align-self-stretch box p-4 text-center">
+                <div class="icon d-flex align-items-center justify-content-center">
+                    <span class="icon-globe"></span>
+                </div>
+                <h3 class="mb-4">Website</h3>
+                <p><a href="#">yoursite.com</a></p>
+              </div>
+          </div>
+        </div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  
+  <script src="js/main.js"></script>
+  <script src="js/vian.js"></script>
+    
+  </body>
+</html>

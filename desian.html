@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Projects - MUHAMAD LUTHFIAN</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+
+    .navbar-nav .nav-link.active {
+      color: #FFD700 !important;
+      border-bottom: 2px solid #FFD700;
+    }
+
+    .ftco-section {
+      padding: 50px 0;
+    }
+
+    .project {
+      height: 300px;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .project .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0,0,0,0.6);
+      opacity: 0;
+      transition: 0.3s;
+      border-radius: 5px;
+      z-index: 1;
+    }
+
+    .project:hover .overlay {
+      opacity: 0.7;
+    }
+
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      text-align: center;
+      pointer-events: none;
+    }
+
+    .project:hover .text {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .project .text a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .project .text span {
+      font-size: 0.8rem;
+      color: #ddd;
+    }
+
+    .container-projects {
+      padding-left: 20px;
+      padding-right: 20px;
+      overflow-x: hidden;
+    }
+
+    .project-heading-wrapper {
+      position: relative;
+      padding-top: 5px;
+      padding-bottom: 2px;
+    }
+
+    .bg-text {
+      font-size: 120px;
+      font-weight: 900;
+      color: rgba(46, 46, 46, 0.536);
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .main-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: white;
+      z-index: 2;
+      position: relative;
+    }
+
+    .subtext {
+      font-size: 1rem;
+      color: #bdbdbd;
+      z-index: 2;
+      position: relative;
+      margin-top: 10px;
+      min-height: 24px;
+      white-space: normal;
+      word-break: break-word;
+      border-right: 2px solid #bdbdbd;
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    @media (max-width: 768px) {
+      .bg-text {
+        font-size: 80px;
+      }
+
+      .main-title {
+        font-size: 2rem;
+      }
+
+      .subtext {
+        font-size: 0.95rem;
+      }
+
+      .project .overlay,
+      .project .text {
+        opacity: 0 !important;
+        pointer-events: auto !important;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .bg-text {
+        font-size: 60px;
+      }
+
+      .main-title {
+        font-size: 1.6rem;
+      }
+
+      .subtext {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container">
+      <a class="navbar-brand font-weight-bold" href="#">MUHAMAD LUTHFIAN</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Projects</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Projects Section -->
+  <section class="ftco-section" id="projects-section">
+    <div class="container container-projects">
+      <!-- Heading -->
+      <div class="project-heading-wrapper position-relative text-center mb-5">
+        <h1 class="bg-text">Projects</h1>
+        <h2 class="main-title">Our Projects</h2>
+        <p class="subtext" id="typing-text"></p>
+      </div>
+
+      <!-- Project Cards -->
+      <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 mb-2">
+          <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/corona.jpg');">
+            <div class="overlay"></div>
+            <div class="text text-center p-3">
+              <h3><a href="#">Corona Character</a></h3>
+              <span>Vector Design</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 mb-2">
+          <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/daging.jpg');">
+            <div class="overlay"></div>
+            <div class="text text-center p-3">
+              <h3><a href="#">Meat Character</a></h3>
+              <span>Illustration</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 mb-2">
+          <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/Burger.png');">
+            <div class="overlay"></div>
+            <div class="text text-center p-3">
+              <h3><a href="#">Burger Mascot</a></h3>
+              <span>Digital Art</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 mb-2">
+          <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/donat.png');">
+            <div class="overlay"></div>
+            <div class="text text-center p-3">
+              <h3><a href="#">Donut Mascot</a></h3>
+              <span>UI Icon</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 mb-2">
+          <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/bumi.jpg');">
+            <div class="overlay"></div>
+            <div class="text text-center p-3">
+              <h3><a href="#">Logo Design</a></h3>
+              <span>Branding</span>
+            </div>
+          </div>
+        </div>
+
+		<div class="col-12 col-sm-6 col-md-4 mb-2">
+		  <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/eskrim.jpg');">
+			<div class="overlay"></div>
+			<div class="text text-center p-3">
+			  <h3><a href="#">Logo Design</a></h3>
+			  <span>Branding</span>
+			</div>
+		  </div>
+        </div>
+
+		<div class="col-12 col-sm-6 col-md-4 mb-2">
+		  <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/jantung.png');">
+			<div class="overlay"></div>
+			<div class="text text-center p-3">
+			  <h3><a href="#">Logo Design</a></h3>
+			  <span>Branding</span>
+			</div>
+		  </div>
+		</div>
+
+		<div class="col-12 col-sm-6 col-md-4 mb-2">
+		  <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/kentang.jpg');">
+			<div class="overlay"></div>
+			<div class="text text-center p-3">
+			  <h3><a href="#">Logo Design</a></h3>
+			  <span>Branding</span>
+			</div>
+		  </div>
+		</div>
+
+		<div class="col-12 col-sm-6 col-md-4 mb-2">
+		  <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/peanepir.png');">
+			<div class="overlay"></div>
+			<div class="text text-center p-3">
+			  <h3><a href="#">Logo Design</a></h3>
+			  <span>Branding</span>
+			</div>
+		  </div>
+		</div>
+
+		<div class="col-12 col-sm-6 col-md-4 mb-2">
+		  <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/pensil.jpg');">
+			<div class="overlay"></div>
+			<div class="text text-center p-3">
+			  <h3><a href="#">Logo Design</a></h3>
+			  <span>Branding</span>
+			</div>
+		  </div>
+		</div>
+
+		<div class="col-12 col-sm-6 col-md-4 mb-2">
+		  <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/pizza.jpg');">
+			<div class="overlay"></div>
+			<div class="text text-center p-3">
+			  <h3><a href="#">Logo Design</a></h3>
+			  <span>Branding</span>
+			</div>
+		  </div>
+		</div>
+
+		<div class="col-12 col-sm-6 col-md-4 mb-2">
+		  <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/pumkin.jpg');">
+			<div class="overlay"></div>
+			<div class="text text-center p-3">
+			  <h3><a href="#">Logo Design</a></h3>
+			  <span>Branding</span>
+			</div>
+		  </div>
+		</div>
+
+    <div class="col-12 col-sm-6 col-md-4 mb-2">
+      <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/botol.png');">
+        <div class="overlay"></div>
+        <div class="text text-center p-3">
+          <h3><a href="#">Botol Mascot</a></h3>
+          <span>Branding</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 mb-2">
+      <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/cangkir.jpg');">
+        <div class="overlay"></div>
+        <div class="text text-center p-3">
+          <h3><a href="#">Cangkir Mascot</a></h3>
+          <span>Branding</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 mb-2">
+      <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/basket.jpg');">
+        <div class="overlay"></div>
+        <div class="text text-center p-3">
+          <h3><a href="#">Basketball Mascot</a></h3>
+          <span>Branding</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 mb-2">
+      <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/Sandwich.png');">
+        <div class="overlay"></div>
+        <div class="text text-center p-3">
+          <h3><a href="#">Sandwich Mascot</a></h3>
+          <span>Ilustrator</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-12 col-sm-6 col-md-4 mb-2">
+      <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/saturnuss.png');">
+        <div class="overlay"></div>
+        <div class="text text-center p-3">
+          <h3><a href="#">Saturnus Mascot</a></h3>
+          <span>Branding</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 mb-2">
+      <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/kejuuu.png');">
+        <div class="overlay"></div>
+        <div class="text text-center p-3">
+          <h3><a href="#">Keju Mascot</a></h3>
+          <span>Branding</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 mb-2">
+      <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/balungg.png');">
+        <div class="overlay"></div>
+        <div class="text text-center p-3">
+          <h3><a href="#">Tulang Daging Mascot</a></h3>
+          <span>Images</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-12 col-sm-6 col-md-4 mb-2">
+      <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/pumkinn.png');">
+        <div class="overlay"></div>
+        <div class="text text-center p-3">
+          <h3><a href="#">Pumkin Mascot</a></h3>
+          <span>Images</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 mb-2">
+      <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/bunga daisy.png');">
+        <div class="overlay"></div>
+        <div class="text text-center p-3">
+          <h3><a href="#">Daisy Flower</a></h3>
+          <span>Images</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 mb-2">
+      <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/hotdog.png');">
+        <div class="overlay"></div>
+        <div class="text text-center p-3">
+          <h3><a href="#">Hotdog Mascot</a></h3>
+          <span>Images</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-sm-6 col-md-4 mb-2">
+      <div class="project d-flex justify-content-center align-items-center" style="background-image: url('images/buah pantat1.png');">
+        <div class="overlay"></div>
+        <div class="text text-center p-3">
+          <h3><a href="#">Hotdog Mascot</a></h3>
+          <span>Images</span>
+        </div>
+      </div>
+    </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Typing Effect Script -->
+  <script>
+    const text = "Saya adalah seorang ilustrator dan design grafis, hobby saya membuat karakter dengan konsep ilustrasi.";
+    const typingElement = document.getElementById("typing-text");
+    let index = 0;
+
+    function typeWriter() {
+      if (index < text.length) {
+        typingElement.innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, 40);
+      } else {
+        setTimeout(() => {
+          typingElement.innerHTML = "";
+          index = 0;
+          setTimeout(typeWriter, 850);
+        }, 2500);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+  <!-- Tambahkan ini sebelum </body> -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
