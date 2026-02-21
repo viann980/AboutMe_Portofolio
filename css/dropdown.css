@@ -1,0 +1,13 @@
+.navbar-nav .dropdown-menu {
+    transition: all 0.3s ease;
+    pointer-events: none; /* Mencegah lag saat kursor berpindah cepat */
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.navbar-nav .dropdown.show .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}

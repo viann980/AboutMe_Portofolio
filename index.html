@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/vian.css">
     <link rel="stylesheet" href="css/vian2.css">
+    <link rel="stylesheet" href="css/dropdown.css">
 
     <style>
         /* CSS FIX: Mencegah scroll horizontal */
@@ -251,10 +252,10 @@
 
                     var typedMotion = new Typed('#typed-motion', {
                         strings: [
-                        'Illustrations Artist Design', 
-                        ], // Bisa diisi banyak profesi bergantian
-                        typeSpeed: 100,
-                        backSpeed: 50, 
+                        'Illustrations Artist Design', ], // Bisa diisi banyak profesi bergantian
+                        typeSpeed: 100, 
+                        backSpeed: 50,
+                        backDelay: 2000,
                         loop: true, // Nama cukup diketik sekali saja agar elegan
                         showCursor: true,
                         cursorChar: '|'    
@@ -341,75 +342,74 @@
         <div class="container">
             <div class="row justify-content-center pb-5">
           <div class="col-md-10 heading-section text-center ftco-animate">
+            <h1 class="big big-2">Educational</h1>
+            <h2 class="mb-4">Educational</h2>
+            <p>Hi, this is my experience in the world of education, my exploration of multimedia and software has a very appropriate correlation to be implemented in the world of technology..</p>
+          </div>
+        </div>
+          <div class="row" style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+    
+    <div class="col-md-6" style="flex: 1; min-width: 300px; padding: 0;">
+        <div class="resume-wrap ftco-animate" style="border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 25px; background-color: rgba(255, 255, 255, 0.05); height: 100%;">
+            
+            <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 15px;">
+                <img src="bam.png" alt="Logo SMK" style="width: 60px; height: 60px; object-fit: contain; flex-shrink: 0;">
+                <div style="text-align: left;">
+                    <a href="https://smkbam.sch.id/" target="_blank" style="text-decoration: none;">
+                        <h2 style="font-size: 1.3em; color: #ffffff; margin: 0; font-weight: 700; line-height: 1.2;">SMK BINA AM-MA'MUR</h2>
+                    </a>
+                    <span style="color: #ffbd39; font-weight: bold; font-size: 0.9em;">2017 - 2020</span>
+                </div>
+            </div>
+
+            <span class="position" style="display: block; color: #bbb; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8em; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px;">Vocational School</span>
+            
+            <p style="text-align: justify; line-height: 1.6; color: rgba(255, 255, 255, 0.8); font-size: 0.95em; margin: 0;">
+                At vocational school, I majored in multimedia. In this major, I honed my soft skills in multimedia, such as graphic design, visual effects editing, video and audio editing, compositing, and illustration.
+            </p>
+        </div>
+    </div>
+
+    <div class="col-md-6" style="flex: 1; min-width: 300px; padding: 0;">
+        <div class="resume-wrap ftco-animate" style="border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 25px; background-color: rgba(255, 255, 255, 0.05); height: 100%;">
+            
+            <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 15px;">
+                <img src="logo unipi.png" alt="Logo UNIPI" style="width: 60px; height: 60px; object-fit: contain; flex-shrink: 0;">
+                <div style="text-align: left;">
+                    <a href="https://unipem.ac.id/" target="_blank" style="text-decoration: none;">
+                        <h2 style="font-size: 1.3em; color: #ffffff; margin: 0; font-weight: 700; line-height: 1.2;">UNIVERSITAS INSAN PEMBANGUNAN INDONESIA</h2>
+                    </a>
+                    <span style="color: #ffbd39; font-weight: bold; font-size: 0.9em;">2023 - 2027</span>
+                </div>
+            </div>
+
+            <span class="position" style="display: block; color: #bbb; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8em; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 5px;">University College</span>
+            
+            <p style="text-align: justify; line-height: 1.6; color: rgba(255, 255, 255, 0.8); font-size: 0.95em; margin: 0;">
+                I'm studying software engineering at this university. In software engineering, I study algorithms and database structures, software development, web/application development, programming development, and testing and debugging.
+            </p>
+        </div>
+    </div>
+</div>
+
+                 <section class="ftco-section ftco-no-pb" id="Experience">
+        <div class="container">
+            <div class="row justify-content-center pb-5">
+          <div class="col-md-10 heading-section text-center ftco-animate">
             <h1 class="big big-2">Experience</h1>
             <h2 class="mb-4">Experience</h2>
             <p>HI, This is my experience while working on projects at school, university and work experience, I also work on web design and graphic design projects outside of educational hours, here are the results of my projects.</p>
           </div>
         </div>
             <div class="row">
-                <div class="col-md-6">
-                    <div class="resume-wrap ftco-animate">
-                        <style>
-                            .resume-wrap {
-                            border: 1px solid rgba(255, 255, 255, 0.1);
-                            border-radius: 8px;
-                            padding: 20px;
-                            margin: 20px;
-                            background-color:rgba(255, 255, 255, 0.1);
-                            max-width: 600px;
-                            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
-                        }
-                        .resume-wrap .date {
-                            font-weight: bold;
-                            color: #ffc107;
-                        }
-                        .resume-wrap img {
-                            display: block;
-                            margin: 10px 0;
-                        }
-                        .resume-wrap h2 {
-                            font-size: 1.5em;
-                            color: #ffffff;
-                            margin: 10px 0;
-                        }
-                        .resume-wrap .position {
-                            font-style: none;
-                            color: #777;
-                        }
-                        .resume-wrap p {
-                            text-align: justify;
-                            line-height: 1.6;
-                        }
-                        .resume-wrap a {
-                            color: #ffc107;
-                            text-decoration: none;
-                        }
-                        .resume-wrap a:hover {
-                            text-decoration: underline;
-                        }
-                        </style>
-                        <span class="date">2017-2020</span>
-                        <img src="bam.png" alt="#" style="max-width: 15%; height: auto;">
-                        <a href="https://smkbam.sch.id/" target="_blank"><h2>SMK BINA AM-MAMUR</h2></a>
-                        <span class="position">VOCATIONAL SCHOOL</span>
-                        <p class="mt-4"style="text-align: justify">When I was in vocational school I majored in multimedia, in this major I honed my soft skills in the multimedia field such as graphic design, visual effects editing, video and audio editing, compositing and illustration. I have also won second place in the graphic design competition at the Tangerang district level and several other projects. The project can be seen in the project navbar</p>
-                    </div>
-                    <div class="resume-wrap ftco-animate">
-                        <span class="date">2023 - 2027</span>
-                        <img src="logo unipi.png" alt="#" style="max-width: 15%; height: auto;">
-                        <a href="https://unipem.ac.id/" target="_blank"><h2>Universitas Insan Pembangunan Indonesia</h2></a>
-                        <span class="position">University Collage</span>
-                        <p class="mt-4"style="text-align: justify">I studied higher education at the Indonesian Development Human University which is located on the Serang Bitung highway, Tangerang. I studied at this campus taking a software engineering study program, In software engineering I learned about databases, web development, algorithms and other computer devices, my experience on campus was establishing a software engineering student association, , I serve as chairman, the purpose of this association was formed to build a forum for SE students <a href="https://www.instagram.com/hmse_unipi/" target="_blank">@hmse.unipi</a>, in the association I worked on several simple coding and database projects as well as other productive activities, The following is a portofolio of software engineering student association project in the form of a website <a href="https://hmse-unipi.or.id/" target="_blank">hmse-unipi.or.id</a></p>
-                    </div>
-                </div>
-
+                
                 <div class="col-md-6">
                     <div class="resume-wrap ftco-animate">
                         <span class="date">2020-2021</span>
                         <img src="Logo matahari.png" alt="#" style="max-width: 20%; height: auto;">
-                        <a href="https://mataharileisure.co.id/" target="_blank"><h2>PT MATAHARI LEISURE</h2></a>
+                        <a href="https://mataharileigitsure.co.id/" target="_blank"><h2>PT MATAHARI LEISURE</h2></a>
                         <span class="position">Company</span>
-                        <p class="mt-4"style="text-align: justify">PT Matahari Leisure is a joint venture between PT Matahari Putra Prima (the best retail pioneer in Indonesia/Lippo Group) and Helix Leisure as an out-of-home entertainment technology operator, offering revenue management systems, point of sale solutions, debit cards, ticket solutions, electronic locker systems , and entertainment and arcade games. My experience at this PT is as an assembly operator, making special designs for items that you want to make and assembling cables for items. I worked for 2 years.</p>
+                        <p class="mt-4"style="text-align: justify">PT Matahari Leisure is a joint venture between PT Matahari Putra Prima (the best retail pioneer in Indonesia/Lippo Group) and Helix Leisure as an out-of-home entertainment technology operator, offering revenue management systems, point of sale solutions, debit cards, ticket solutions, electronic locker systems , and entertainment and arcade games. My experience at this PT is as an assembly operator, making special designs for items that you want to make and assembling cables for items. I worked for 2 years.</p>`
                     </div>
                     <div class="resume-wrap ftco-animate">
                         <span class="date">2021-2027</span>
