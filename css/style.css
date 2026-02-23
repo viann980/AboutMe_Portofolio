@@ -6759,7 +6759,7 @@ button.bg-dark:focus {
 
 .pt-5,
 .py-5 {
-  padding-top: 3rem !important; }
+  padding-top: 2rem !important; }
 
 .pr-5,
 .px-5 {
@@ -6767,7 +6767,7 @@ button.bg-dark:focus {
 
 .pb-5,
 .py-5 {
-  padding-bottom: 3rem !important; }
+  padding-bottom: 2rem !important; }
 
 .pl-5,
 .px-5 {
@@ -9219,14 +9219,28 @@ textarea.form-control {
     text-transform: uppercase;
     color: black;
     letter-spacing: 3px; }
-  .heading-section h1.big {
+ /* Aturan Dasar & Tampilan Desktop (Layar Lebar) */
+.heading-section h1.big {
     position: absolute;
     top: 0px;
     left: 0;
-    font-size: 7vw;
+    right: 0; /* Tambahkan ini agar center */
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 100px; /* Ukuran tetap untuk desktop agar stabil */
     color: rgba(255, 255, 255, 0.1);
     z-index: -1;
-    font-weight: 900; }
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+/* Aturan Khusus Mobile (Layar di bawah 768px) */
+@media (max-width: 767.98px) {
+    .heading-section h1.big {
+        top: 15px; /* Sesuaikan posisi vertikal di mobile jika perlu */
+        font-size: 13vw; /* Pakai vw khusus di mobile agar responsif */
+    }
+}
     .heading-section h1.big.big-2 {
       right: 0; }
   .heading-section h2 {
