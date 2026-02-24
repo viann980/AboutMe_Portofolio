@@ -70,4 +70,103 @@
   background-color: #004cff;
   transition: width 0.3s ease-in-out;
  }
-        
+
+/* --- KONFIGURASI LAYOUT UTAMA --- */
+.contact-card {
+    width: 100%;
+    background: #121212; /* Background gelap sesuai template */
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 25px 10px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-decoration: none !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+/* --- LOGO: KUNING SOLID DI AWAL --- */
+.brand-logo {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 15px;
+    /* Filter untuk memaksa semua icon SVG menjadi kuning emas (#ffbd39) */
+    transition: all 0.4s ease;
+}
+
+.contact-card h3 {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* --- INTERAKSI HOVER: WARNA ASLI & GLOW BORDER --- */
+.contact-card:hover {
+    transform: translateY(-10px);
+    background: #1a1a1a;
+}
+
+/* Saat hover, hilangkan filter kuning agar warna asli muncul */
+.contact-card:hover .brand-logo {
+    filter: none;
+}
+
+/* Khusus GitHub Hover (menjadi putih agar kontras di dark mode) */
+.contact-card.github:hover .brand-logo {
+    filter: invert(100%);
+}
+
+/* Efek Glow Border per Platform */
+.contact-card.instagram:hover { border-color: #E1306C; box-shadow: 0 0 20px rgba(225, 48, 108, 0.5); }
+.contact-card.linkedin:hover  { border-color: #0077b5; box-shadow: 0 0 20px rgba(0, 119, 181, 0.5); }
+.contact-card.email:hover     { border-color: #EA4335; box-shadow: 0 0 20px rgba(234, 67, 53, 0.5); }
+.contact-card.github:hover    { border-color: #ffffff; box-shadow: 0 0 20px rgba(255, 255, 255, 0.3); }
+.contact-card.youtube:hover   { border-color: #FF0000; box-shadow: 0 0 20px rgba(255, 0, 0, 0.5); }
+
+/* --- RESPONSIVE MOBILE (PENTING) --- */
+@media (max-width: 767.98px) {
+    /* Mengubah 1 kolom menjadi 2 kolom di mobile agar rapi */
+    .contact-info.row-cols-1 {
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    /* Tombol ke-5 (YouTube) dibuat melebar atau tetap di grid */
+    .contact-info .col:last-child {
+        grid-column: span 2; /* YouTube mengambil 2 kolom di bawah agar simetris */
+    }
+
+    .contact-card {
+        padding: 15px 5px;
+    }
+
+    .brand-logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .contact-card h3 {
+        font-size: 12px;
+    }
+}
+
+/* --- COPYRIGHT STYLING --- */
+.copyright-text {
+    color: #666;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-top: 50px;
+    border-top: 1px solid rgba(255,255,255,0.05);
+    padding-top: 30px;
+}
+
+.name-highlight {
+    color: #ffbd39; /* Kuning emas Muhamad Luthfian */
+    font-weight: 700;
+}
