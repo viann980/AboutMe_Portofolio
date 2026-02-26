@@ -170,3 +170,14 @@
     color: #ffbd39; /* Kuning emas Muhamad Luthfian */
     font-weight: 700;
 }
+
+/* Mengubah warna ikon garis tiga */
+.navbar-toggler .oi-menu {
+    color: #ffbd39 !important; /* Gunakan warna kuning khas template kamu */
+}
+
+/* Jika menggunakan icon font-awesome atau span biasa */
+.navbar-toggler {
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    padding: 10px !important;
+}
