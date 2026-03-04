@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-top: 0;
-  margin-bottom: 1.5rem; }
+  margin-bottom: 1rem; }
 
 abbr[title],
 abbr[data-original-title] {
@@ -6653,7 +6653,7 @@ button.bg-dark:focus {
 
 .mb-5,
 .my-5 {
-  margin-bottom: 3rem !important; }
+  margin-bottom: 2rem !important; }
 
 .ml-5,
 .mx-5 {
@@ -6729,7 +6729,7 @@ button.bg-dark:focus {
 
 .pb-3,
 .py-3 {
-  padding-bottom: 1rem !important; }
+  padding-bottom: 0; }
 
 .pl-3,
 .px-3 {
@@ -6759,7 +6759,7 @@ button.bg-dark:focus {
 
 .pt-5,
 .py-5 {
-  padding-top: 2rem !important; }
+  padding-top: 0.5rem !important; }
 
 .pr-5,
 .px-5 {
@@ -9098,13 +9098,13 @@ textarea.form-control {
   position: relative; }
   @media (max-width: 767.98px) {
     .ftco-section {
-      padding: 6em 0; } }
+      padding: 1em 0; } }
 
 .ftco-no-pt {
   padding-top: 0 !important; }
 
 .ftco-no-pb {
-  padding-bottom: 0 !important; }
+  padding-bottom: 0; }
 
 .ftco-bg-dark {
   background: #3c312e; }
@@ -9238,7 +9238,7 @@ textarea.form-control {
 @media (max-width: 767.98px) {
     .heading-section h1.big {
         top: 15px; /* Sesuaikan posisi vertikal di mobile jika perlu */
-        font-size: 13vw; /* Pakai vw khusus di mobile agar responsif */
+        font-size: 12vw; /* Pakai vw khusus di mobile agar responsif */
     }
 }
     .heading-section h1.big.big-2 {
