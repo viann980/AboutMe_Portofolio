@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Certificates - MUHAMAD LUTHFIAN</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* CSS Dasar */
+    * { box-sizing: border-box; }
+    body { background: #000; color: white; font-family: 'Poppins', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+    
+    /* Navbar Style */
+    .navbar-nav .nav-link.active { color: #FFD700 !important; border-bottom: 2px solid #FFD700; }
+    
+    .ftco-section { padding: 30px 0; }
+    
+    /* Heading Styles */
+    .project-heading-wrapper { position: relative; padding-top: 5px; padding-bottom: 2px; }
+    .bg-text { font-size: 120px; font-weight: 900; color: rgba(46, 46, 46, 0.536); position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 0; pointer-events: none; user-select: none; line-height: 1; white-space: nowrap; }
+    .main-title { font-size: 2.8rem; font-weight: 800; color: white; z-index: 2; position: relative; }
+    .subtext { font-size: 1rem; color: #bdbdbd; z-index: 2; position: relative; margin: 10px auto 0; min-height: 24px; border-right: 2px solid #FFD700; width: fit-content; text-align: center; padding-right: 5px; }
+
+    /* Animasi Cursor Berkedip */
+    @keyframes blink { 50% { border-color: transparent; } }
+    .subtext { animation: blink 0.7s step-end infinite; }
+
+    /* Style Sertifikat (Kanan-Kiri di Desktop, Tengah di Mobile) */
+    .cert-card { max-width: 450px; width: 100%; transition: transform 0.3s ease; }
+    .cert-img { border-radius: 8px; border: 2px solid #333; box-shadow: 0 10px 20px rgba(0,0,0,0.5); width: 100%; }
+
+    @media (max-width: 768px) {
+      .bg-text { font-size: 80px; }
+      .main-title { font-size: 2rem; }
+      .cert-card { max-width: 100%; }
+      .text-md-left { text-align: center !important; }
+    }
+
+    @media (min-width: 768px) {
+      .cert-card:hover { transform: translateY(-5px); }
+    }
+
+    .bg-text { 
+      /* Nilai Standar untuk Desktop (Ukuran Statis) */
+      font-size: 120px; 
+      font-weight: 900; 
+      color: rgba(95, 95, 95, 0.3); 
+      position: absolute; 
+      top: 50%; 
+      left: 50%; 
+      transform: translate(-50%, -50%); 
+      z-index: 0; 
+      pointer-events: none; 
+      user-select: none; 
+      line-height: 1; 
+      white-space: nowrap; 
+      width: 100%;
+      text-align: center;
+    }
+
+    .main-title { 
+      font-size: 2.8rem; 
+      font-weight: 800; 
+      color: white; 
+      z-index: 2; 
+      position: relative; 
+    }
+
+    /* --- RESPONSIVE FIX --- */
+
+    /* Tablet & Mobile (Layar di bawah 992px) */
+    @media (max-width: 991px) {
+      .bg-text { 
+        /* Mulai gunakan VW di sini agar fleksibel mengikuti lebar layar */
+        font-size: 12vw; 
+      }
+    }
+
+    /* Khusus Mobile (Layar di bawah 768px) */
+    @media (max-width: 767px) {
+      .bg-text { 
+        font-size: 14vw; /* Nilai yang sudah kamu anggap oke di mobile */
+        top: 50%; 
+      }
+      .main-title { 
+        font-size: 1.8rem; 
+      }
+      .cert-card { max-width: 100%; }
+      .text-md-left { text-align: center !important; }
+    }
+
+    /* Untuk layar HP yang sangat kecil agar tidak terpotong sama sekali */
+    @media (max-width: 480px) {
+      .bg-text {
+        font-size: 13vw;
+      }
+    }
+    /* Custom Hamburger Icon (Tiga Garis Kuning) */
+.navbar-toggler-icon-custom {
+    display: inline-block;
+    width: 20px;
+    height: 2px;
+    background-color: #FFD700;
+    position: relative;
+    vertical-align: middle;
+}
+
+.navbar-toggler-icon-custom::before,
+.navbar-toggler-icon-custom::after {
+    content: "";
+    width: 20px;
+    height: 2px;
+    background-color: #FFD700;
+    position: absolute;
+    left: 0;
+}
+
+.navbar-toggler-icon-custom::before { top: -6px; }
+.navbar-toggler-icon-custom::after { bottom: -6px; }
+
+/* Menghilangkan outline biru bawaan browser saat diklik */
+.navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+/* Memastikan tombol terlihat serasi dengan screenshot */
+.navbar-toggler {
+    background-color: #0c0c0c !important; /* Background hitam gelap seperti di gambar */
+    transition: 0.3s;
+}
+
+.navbar-toggler:hover {
+    background-color: #1a1a1a !important;
+}
+/* Memaksa gambar sertifikat memiliki rasio aspek yang sama (Landscape) */
+.cert-img {
+    aspect-ratio: 4 / 3; /* Mengunci rasio agar semua kotak sama besar */
+    object-fit: cover;   /* Memastikan gambar memenuhi kotak tanpa gepeng */
+    border-radius: 8px;
+    border: 2px solid #333;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    width: 100%;
+}
+
+/* Mengunci tinggi judul agar sejajar jika ada teks yang terlalu panjang */
+.cert-info h4 {
+    min-height: 50px; 
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 2px;
+}
+</style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+    <div class="container">
+      <a class="navbar-brand mr-3" href="index.html">MUHAMAD LUTHFIAN</a>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+        <span class="navbar-toggler-icon-custom"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#certificates-section">Certificates</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ <section class="ftco-section" id="certificates-section">
+  <div class="container">
+    <div class="project-heading-wrapper position-relative text-center mb-5">
+      <h1 class="bg-text">Certificates</h1>
+      <h2 class="main-title">My Achievement</h2>
+      <p class="subtext" id="typing-cert"></p>
+    </div>
+
+    <div class="row d-flex justify-content-center">
+      
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-start">
+        <div class="cert-card">
+          <img src="images/c1.jpg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #FFD700; font-weight: 500;">Bootcamp Fullstack Developer</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">Web Programming - Eduwork</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-end">
+        <div class="cert-card">
+          <img src="images/c2.jpg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #FFD700; font-weight: 500;">Mini Class Next JS</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">Kasir App - Dunia Coding</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-start">
+        <div class="cert-card">
+          <img src="images/c3.jpg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #FFD700; font-weight: 500;">Pengembangan Platform Pelajaran Terintegrasi AI</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">Focus Group Discussion - Insan AI</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-end">
+        <div class="cert-card">
+          <img src="images/c4.jpg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #FFD700; font-weight: 500;">Panitia Himpunan Mahasiswa</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">Software Engineering - UNIPI</p>
+          </div>
+        </div>
+      </div>
+
+    </div> </div>
+</section>
+
+  <script>
+    function typeEffect(elementId, text, speed, delay) {
+      const element = document.getElementById(elementId);
+      let index = 0;
+
+      function type() {
+        if (index < text.length) {
+          element.innerHTML += text.charAt(index);
+          index++;
+          setTimeout(type, speed);
+        } else {
+          setTimeout(() => {
+            element.innerHTML = "";
+            index = 0;
+            setTimeout(type, 850);
+          }, delay);
+        }
+      }
+      if (element) type();
+    }
+
+    window.onload = function() {
+      // Jalankan efek mengetik hanya untuk sertifikasi
+      typeEffect("typing-cert", "Sertifikasi & Penghargaan", 100, 3000);
+    };
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
