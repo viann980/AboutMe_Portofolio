@@ -155,6 +155,32 @@
     overflow: hidden;
     margin-bottom: 2px;
 }
+/* --- EFEK KHUSUS MOBILE (Tidak Ganggu Desktop) --- */
+
+@media (max-width: 767px) {
+    /* 1. Berikan transisi pada kartu agar gerakan angkatnya halus */
+    .cert-card {
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+        -webkit-tap-highlight-color: transparent; /* Hilangkan kotak biru bawaan HP saat ditekan */
+    }
+
+    /* 2. Efek saat jari menyentuh/menekan kartu (Pop Up ke atas) */
+    .cert-card:active {
+        transform: translateY(-12px) scale(1.02); /* Mengangkat 12px ke atas dan membesar 2% */
+        z-index: 10; /* Agar kartu yang diangkat berada di depan kartu lainnya */
+    }
+
+    /* 3. Memberikan efek bayangan & border kuning saat kartu "melayang" di mobile */
+    .cert-card:active .cert-img {
+        box-shadow: 0 10px 25px rgba(255, 189, 57, 0.4) !important;
+    }
+
+    /* 4. Khusus untuk sertifikat portrait (c10) agar container hitamnya ikut bereaksi */
+    .cert-card:active div[style*="background: #1a1a1a"] {
+        box-shadow: 0 10px 25px rgba(255, 189, 57, 0.4) !important;
+        transform: translateY(0); /* Menjaga konsistensi posisi dalam container */
+    }
+}
 </style>
 </head>
 
@@ -298,7 +324,7 @@
 
       <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-end">
         <div class="cert-card">
-          <img src="images/c11.PNG" class="img-fluid cert-img">
+          <img src="images/c16.jpg" class="img-fluid cert-img">
           <div class="cert-info mt-3 text-center text-md-left">
             <h5 style="color: #ffbd39; font-weight: 500;">Panitia Himpunan Mahasiswa</h5>
             <p style="color: #bbb; font-size: 0.9rem;">Software Engineering - UNIPI</p>
@@ -318,7 +344,7 @@
 
       <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-end">
         <div class="cert-card">
-          <img src="images/c13.jpg" class="img-fluid cert-img">
+          <img src="images/c15.jpg" class="img-fluid cert-img">
           <div class="cert-info mt-3 text-center text-md-left">
             <h5 style="color: #ffbd39; font-weight: 500;">Panitia Himpunan Mahasiswa</h5>
             <p style="color: #bbb; font-size: 0.9rem;">Software Engineering - UNIPI</p>
@@ -339,6 +365,66 @@
       <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-end">
         <div class="cert-card">
           <img src="images/c13.jpg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #ffbd39; font-weight: 500;">Panitia Himpunan Mahasiswa</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">Software Engineering - UNIPI</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-start">
+        <div class="cert-card">
+          <img src="images/v1_page-0001.jpg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #ffbd39; font-weight: 500;">Pengembangan Platform Pelajaran Terintegrasi AI</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">Focus Group Discussion - Insan AI</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-end">
+        <div class="cert-card">
+          <img src="images/v2_page-0001.jpg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #ffbd39; font-weight: 500;">Panitia Himpunan Mahasiswa</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">Software Engineering - UNIPI</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-start">
+        <div class="cert-card">
+          <img src="images/v3_page-0001.jpg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #ffbd39; font-weight: 500;">Pengembangan Platform Pelajaran Terintegrasi AI</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">Focus Group Discussion - Insan AI</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-end">
+        <div class="cert-card">
+          <img src="images/v4_page-0001.jpg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #ffbd39; font-weight: 500;">Panitia Himpunan Mahasiswa</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">Software Engineering - UNIPI</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-start">
+        <div class="cert-card">
+          <img src="images/v5_page-0001.jpg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #ffbd39; font-weight: 500;">Pengembangan Platform Pelajaran Terintegrasi AI</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">Focus Group Discussion - Insan AI</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-end">
+        <div class="cert-card">
+          <img src="images/v6_page-0001.jpg" class="img-fluid cert-img">
           <div class="cert-info mt-3 text-center text-md-left">
             <h5 style="color: #ffbd39; font-weight: 500;">Panitia Himpunan Mahasiswa</h5>
             <p style="color: #bbb; font-size: 0.9rem;">Software Engineering - UNIPI</p>
