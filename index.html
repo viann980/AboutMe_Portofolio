@@ -314,7 +314,7 @@
                   <div class="col-md-12 heading-section ftco-animate">
                     <h1 class="big">About</h1>
                     <h2 class="mb-4">About Me</h2>
-                    <p style="text-align: justify">Hai, Let me introduce myself, my name is Muhammad Luthfian, I was born on September 15 2002, my hobby since I was little was drawing, then I developed it at a vocational high school with a multimedia study program with basic graphic design, illustration, motion and editing, I am currently studying at Indonesian Human Development University campus, by taking a software engineering study program and combining multimedia science with software engineering.</p>
+                    <p style="text-align: justify">Hai, Let me introduce myself, my name is Muhammad Luthfian, I was born on September 15 2002, my hobby since I was little was drawing, then I developed it at a vocational high school with a multimedia study program with basic graphic design, illustration, motion and editing, I am currently studying at <i>Insan Pembangunan Indonesia</i> University campus, by taking a software engineering study program and combining multimedia science with software engineering.</p>
                     <ul class="about-info mt-4 px-md-0 px-2">
                         <li class="d-flex"><span>Name:</span> <span>Muhamad Luthfian</span></li>
                         <li class="d-flex"><span>Date of birth:</span> <span>September 15, 2002</span></li>
@@ -730,66 +730,154 @@
             <p>This is an example of a project that I have developed and a project with a team specifically for web development.</p>
           </div>
         </div>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/webproject1.png);">
-                        <div class="overlay"></div>
-                        <div class="text text-center p-4">
-                            <h3><a href="https://gymmmasterfiit.netlify.app/">Branding &amp; Illustration Design</a></h3>
-                            <span>Web Design</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/webproject2.png);">
-                        <div class="overlay"></div>
-                        <div class="text text-center p-4">
-                            <h3><a href="https://portofolio1-vian.netlify.app/">Branding &amp; Illustration Design</a></h3>
-                            <span>Web Design</span>
-                        </div>
-                    </div>
-                </div>
+           <style>
+    /* Container utama agar sejajar dengan konten atas */
+    .ftco-section-project {
+        padding: 60px 0;
+        background: #000; /* Menyesuaikan tema gelap Anda */
+    }
 
-                <div class="col-md-8">
-                    <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/webproject3.png);">
-                        <div class="overlay"></div>
-                        <div class="text text-center p-4">
-                            <h3><a href="http://insan-ai.id/">Branding &amp; Illustration Design</a></h3>
-                            <span>Web Design</span>
-                        </div>
-                    </div>
+    /* Row adjustment agar tidak ada sisa space di pinggir */
+    .project-row {
+        margin-left: -15px;
+        margin-right: -15px;
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-                    <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/sales.png);">
-                        <div class="overlay"></div>
-                        <div class="text text-center p-4">
-                            <h3><a href="https://sales-management-app-ten.vercel.app/">Branding &amp; Illustration Design</a></h3>
-                            <span>Web Design</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/pohon.jpg);">
-                                <div class="overlay"></div>
-                                <div class="text text-center p-4">
-                                    <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                                    <span>Web Design</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="project img ftco-animate d-flex justify-content-center align-items-center" style="background-image: url(images/pensil.jpg);">
-                                <div class="overlay"></div>
-                                <div class="text text-center p-4">
-                                    <h3><a href="#">Branding &amp; Illustration Design</a></h3>
-                                    <span>Web Design</span>
-                                </div>
-                            </div>
-                        </div>
+    /* Kotak Project Utama */
+    .project-card {
+        position: relative;
+        width: 100%;
+        height: 220px; /* Ukuran lebih besar agar thumbnail jelas */
+        margin-bottom: 30px;
+        background-color: #1a1a1a;
+        background-size: cover; /* Gambar memenuhi kotak */
+        background-repeat: no-repeat;
+        background-position: center top; /* Fokus ke bagian atas/tengah gambar */
+        border-radius: 15px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #2a2a2a;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    /* Efek Hover: Kotak sedikit terangkat */
+    .project-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        border-color: #f8b739; /* Warna border berubah saat hover */
+    }
+
+    /* Overlay Gelap saat Hover */
+    .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.75);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: all 0.3s ease;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .project-card:hover .project-overlay {
+        opacity: 1;
+    }
+
+    /* Styling Teks di Dalam Overlay */
+    .project-overlay h3 {
+        margin-bottom: 10px;
+    }
+
+    .project-overlay h3 a {
+        color: #fff;
+        font-size: 20px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    .project-overlay span {
+        color: #f8b739; /* Warna kuning khas portofolio Anda */
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 12px;
+    }
+</style>
+
+<section class="ftco-section-project">
+    <div class="container">
+        <div class="row project-row">
+            
+            <div class="col-md-4">
+                <div class="project-card" style="background-image: url('images/webproject1.png');">
+                    <div class="project-overlay">
+                        <h3><a href="https://gymmmasterfiit.netlify.app/">Gym Master Fit</a></h3>
+                        <span>Web Design</span>
                     </div>
                 </div>
             </div>
+
+            <div class="col-md-4">
+                <div class="project-card" style="background-image: url('images/bd.png');">
+                    <div class="project-overlay">
+                        <h3><a href="https://myportofolio-1.netlify.app/">Personal Portfolio</a></h3>
+                        <span>Web Design</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="project-card" style="background-image: url('images/webproject3.png');">
+                    <div class="project-overlay">
+                        <h3><a href="http://insan-ai.id/">Insan AI Learning</a></h3>
+                        <span>Web Design</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="project-card" style="background-image: url('images/sl.png');">
+                    <div class="project-overlay">
+                        <h3><a href="https://sales-management-app-ten.vercel.app/">Sales Management</a></h3>
+                        <span>Web Application</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="project-card" style="background-image: url('images/pw.webp');">
+                    <div class="project-overlay">
+                        <h3><a href="https://youtu.be/zQK2FwVnQsk">Motion Illustration</a></h3>
+                        <span>Illustration</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="project-card" style="background-image: url('images/tc.jpg');">
+                    <div class="project-overlay">
+                        <h3><a href="https://viann980.github.io/web_event_ticket/">Ticketing System</a></h3>
+                        <span>Web Design</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    </div>
+</div>
+            
             <div class="row justify-content-center mt-5">
                 <div class="col-md-6 text-center ftco-animate">
                     <p><a href="desian.html" class="btn btn-primary py-4 px-5">My Project Illustration</a></p>
