@@ -1,117 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Muhamad Luthfian</title>
-    <link rel="icon" type="image/png" href="images/mj.jpg">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+  <title>Projects - MUHAMAD LUTHFIAN</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-    <link rel="stylesheet" href="css/animate.css">
-    
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.min.css">
-    <link rel="stylesheet" href="css/magnific-popup.css">
-
-    <link rel="stylesheet" href="css/aos.css">
-
-    <link rel="stylesheet" href="css/ionicons.min.css">
-    
-    <link rel="stylesheet" href="css/flaticon.css">
-    <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,600,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
   <style>
     /* --- RESET & BASE --- */
-    html, body {
-            max-width: 100% !important;
-            overflow-x: hidden !important;
-        }
-    /* --- NAV FIX: MEMASTIKAN NAVBAR TAMPIL --- */
+    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+    body { background: #000; color: white; font-family: 'Poppins', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
+
+    /* --- CUSTOM NAVBAR --- */
     .custom-navbar {
       background-color: #000 !important;
-      padding: 15px 0;
-      border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.1);
       position: sticky;
       top: 0;
-      z-index: 9999; /* Sangat tinggi agar tidak tertutup kartu */
+      z-index: 9999;
     }
     .navbar-brand { font-weight: 900; letter-spacing: 1px; color: #fff !important; }
     .nav-link { color: rgba(255,255,255,0.7) !important; font-weight: 400; }
-    .nav-link:hover { color: #FFD700 !important; }
     .nav-link.active { color: #FFD700 !important; border-bottom: 2px solid #FFD700; }
 
     /* --- HEADER ASLI --- */
-    .ftco-section { padding: 50px 0; }
-    .project-heading-wrapper { position: relative; padding: 40px 0; text-align: center; }
-    .bg-text { font-size: 100px; font-weight: 900; color: rgba(46, 46, 46, 0.4); position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 0; pointer-events: none; user-select: none; }
-    .main-title { font-size: 2.8rem; font-weight: 800; color: white; z-index: 2; position: relative; }
+    .ftco-section { padding: 40px 0; }
+    .project-heading-wrapper { position: relative; padding: 30px 0; text-align: center; }
+    .bg-text { font-size: 90px; font-weight: 900; color: rgba(255, 255, 255, 0.1); position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 0; pointer-events: none; }
+    .main-title { font-size: 2.5rem; font-weight: 800; color: white; z-index: 2; position: relative; }
     .subtext { font-size: 1rem; color: #bdbdbd; z-index: 2; position: relative; margin: 10px auto; border-right: 2px solid #FFD700; width: fit-content; padding-right: 10px; }
 
-    /* --- SISTEM 3D CARD TRACKER --- */
-    .project-container { position: relative; width: 100%; height: 320px; margin-bottom: 30px; }
-    .canvas { perspective: 1200px; inset: 0; z-index: 200; position: absolute; display: grid; grid-template-columns: repeat(5, 1fr); grid-template-rows: repeat(5, 1fr); }
+    /* --- ULTRA-SMOOTH 3D CARD SYSTEM --- */
+    .project-container {
+      position: relative;
+      width: 100%;
+      height: 320px;
+      margin-bottom: 30px;
+      /* Memaksa browser menggunakan Hardware Acceleration */
+      transform: translateZ(0);
+      will-change: transform;
+    }
+
+    .canvas {
+      perspective: 1500px; /* Perspective lebih dalam untuk efek 3D halus */
+      inset: 0;
+      z-index: 200;
+      position: absolute;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+
     .tracker { position: relative; z-index: 300; width: 100%; height: 100%; }
     .tracker.tr-13 { cursor: pointer; }
 
     .project-card-ui {
-      position: absolute; inset: 0; z-index: 0; display: flex; justify-content: center; align-items: center;
-      border-radius: 15px; transition: all 0.5s cubic-bezier(0.03, 0.98, 0.52, 0.99);
-      background-size: cover; background-position: center; border: 1px solid rgba(255, 255, 255, 0.1);
-      overflow: hidden; transform-style: preserve-3d; pointer-events: none;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 18px;
+      background-size: cover;
+      background-position: center;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      overflow: hidden;
+      transform-style: preserve-3d;
+      pointer-events: none;
+      
+      /* --- OPTIMASI ANIMASI (SMOOTH & NO DELAY) --- */
+      /* Menggunakan Cubic Bezier untuk gerakan fisik alami */
+      transition: all 0.5s cubic-bezier(0.215, 0.610, 0.355, 1.000); 
+      will-change: transform, box-shadow; /* Beritahu browser elemen ini akan bergerak */
+      backface-visibility: hidden; /* Hindari flicker pada rendering 3D */
     }
 
-    .tracker:hover ~ .project-card-ui { box-shadow: 0 0 30px rgba(255, 215, 0, 0.3); border: 1px solid rgba(255, 215, 0, 0.5); }
-    .tr-13:hover ~ .project-card-ui { filter: brightness(1.2); box-shadow: 0 0 50px rgba(255, 215, 0, 0.5); }
-
-    .overlay-content {
-      position: absolute; inset: 0; background: rgba(0, 0, 0, 0.5); backdrop-filter: blur(8px);
-      opacity: 0; transition: 0.4s; display: flex; flex-direction: column; justify-content: center; align-items: center;
+    /* Glow aktif di semua sudut */
+    .tracker:hover ~ .project-card-ui {
+      box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+      border: 1px solid rgba(255, 215, 0, 0.4);
     }
+
+    /* Efek Zoom & Glow Lebih Terang hanya saat di tengah (Link Aktif) */
+    .tr-13:hover ~ .project-card-ui {
+      box-shadow: 0 15px 40px rgba(255, 217, 0, 0.501);
+      filter: brightness(1.15);
+    }
+
+    /* Overlay Glassmorphism */
+    .project-card-ui .overlay-content {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(0.7px);
+      -webkit-backdrop-filter: blur(8px);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
     .tracker:hover ~ .project-card-ui .overlay-content { opacity: 1; }
 
-    .project-card-ui h3 { font-size: 1.4rem; font-weight: 700; color: #fff; transform: translateZ(80px); margin: 0; }
-    .project-card-ui span { color: #FFD700; font-size: 0.8rem; transform: translateZ(50px); letter-spacing: 2px; margin-top: 5px; }
+    /* Text Styling dengan Z-Depth */
+    .project-card-ui h3 { 
+      font-size: 1.4rem; 
+      font-weight: 700; 
+      color: #fff; 
+      margin: 0;
+      transform: translateZ(80px); /* Teks melayang jauh di depan */
+      text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
 
-    /* --- ROTASI 25 TITIK --- */
-    .tr-1:hover ~ .project-card-ui { transform: rotateX(20deg) rotateY(-20deg); }
-    .tr-3:hover ~ .project-card-ui { transform: rotateX(20deg) rotateY(0deg); }
-    .tr-5:hover ~ .project-card-ui { transform: rotateX(20deg) rotateY(20deg); }
-    .tr-11:hover ~ .project-card-ui { transform: rotateX(0deg) rotateY(-20deg); }
-    .tr-13:hover ~ .project-card-ui { transform: rotateX(0deg) rotateY(0deg) scale(1.1); }
-    .tr-15:hover ~ .project-card-ui { transform: rotateX(0deg) rotateY(20deg); }
-    .tr-21:hover ~ .project-card-ui { transform: rotateX(-20deg) rotateY(-20deg); }
-    .tr-23:hover ~ .project-card-ui { transform: rotateX(-20deg) rotateY(0deg); }
-    .tr-25:hover ~ .project-card-ui { transform: rotateX(-20deg) rotateY(20deg); }
+    .project-card-ui span { 
+      color: #FFD700; 
+      font-size: 0.8rem; 
+      font-weight: 600; 
+      transform: translateZ(50px);
+      letter-spacing: 2px;
+      margin-top: 8px;
+      text-transform: uppercase;
+    }
+
+    /* --- LOGIKA ROTASI 25 TITIK --- */
+    /* Menggunakan derajat yang sedikit lebih rendah agar gerakan terasa lebih terkontrol/mahal */
+    .tr-1:hover ~ .project-card-ui { transform: rotateX(15deg) rotateY(-15deg); }
+    .tr-3:hover ~ .project-card-ui { transform: rotateX(15deg) rotateY(0deg); }
+    .tr-5:hover ~ .project-card-ui { transform: rotateX(15deg) rotateY(15deg); }
+    .tr-11:hover ~ .project-card-ui { transform: rotateX(0deg) rotateY(-15deg); }
+    .tr-13:hover ~ .project-card-ui { transform: rotateX(0deg) rotateY(0deg) scale(1.08); } /* Zoom Tengah */
+    .tr-15:hover ~ .project-card-ui { transform: rotateX(0deg) rotateY(15deg); }
+    .tr-21:hover ~ .project-card-ui { transform: rotateX(-15deg) rotateY(-15deg); }
+    .tr-23:hover ~ .project-card-ui { transform: rotateX(-15deg) rotateY(0deg); }
+    .tr-25:hover ~ .project-card-ui { transform: rotateX(-15deg) rotateY(15deg); }
+
+    /* --- RESPONSIVE OPTIMIZATION --- */
+    @media (pointer: coarse) {
+      /* Mobile/Layar Sentuh: Animasi lebih cepat agar terasa instan saat di-tap */
+      .project-card-ui { transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1); }
+      .container-3d:active .overlay-content { opacity: 1; } /* Munculkan overlay saat ditekan */
+    }
 
     @media (max-width: 768px) {
-      .bg-text { font-size: 60px; top: 0; }
+      .bg-text { font-size: 12vw; top: 10px; }
       .main-title { font-size: 2rem; }
       .project-container { height: 280px; }
     }
+    /* --- NAVBAR STYLE (CLARK TEMPLATE WITH ANIMATED UNDERLINE) --- */
+.custom-navbar {
+    background-color: #000 !important;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 189, 57, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+.navbar-brand {
+    font-weight: 900;
+    color: #fff !important;
+    text-transform: uppercase;
+    font-size: 24px;
+}
+
+/* Base style untuk link navigasi */
+.navbar-nav .nav-item .nav-link {
+    color: #fff !important;
+    font-weight: 400;
+    padding: 10px 15px !important;
+    transition: 0.3s;
+    position: relative; /* Wajib ada untuk posisi garis */
+}
+
+/* Efek Warna saat Hover */
+.navbar-nav .nav-item .nav-link:hover, 
+.navbar-nav .nav-item .nav-link.active {
+    color: #ffbd39 !important;
+}
+
+/* Membuat Garis Kuning (Hidden by default) */
+.navbar-nav .nav-item .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0; /* Mulai dari lebar 0 */
+    height: 2px;
+    bottom: 0;
+    left: 15px; /* Sesuaikan dengan padding-left link */
+    background-color: #ffbd39;
+    visibility: hidden;
+    transition: all 0.3s ease-in-out; /* Animasi memanjang */
+}
+
+/* Animasi Garis saat Hover */
+.navbar-nav .nav-item .nav-link:hover::after {
+    visibility: visible;
+    width: calc(100% - 30px); /* Memanjang sesuai lebar teks */
+}
+
+/* Garis yang selalu muncul pada link Active */
+.navbar-nav .nav-item .nav-link.active::after {
+    visibility: visible;
+    width: calc(100% - 30px);
+}
+
+/* Ikon Media Sosial tetap simpel */
+.nav-link-icon {
+    color: #fff !important;
+    font-size: 18px;
+    margin-left: 12px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.nav-link-icon:hover {
+    color: #ffbd39 !important;
+    transform: translateY(-3px);
+}
   </style>
 </head>
 
 <body>
 
   <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">MUHAMAD LUTHFIAN</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
-          <li class="nav-item"><a class="nav-link active" href="#">Projects</a></li>
-        </ul>
-      </div>
+    <div class="container d-flex justify-content-between align-items-center">
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand" href="index.html">MUHAMAD LUTHFIAN</a>
+            <a href="#" class="nav-link-icon"><i class="fa fa-github"></i></a>
+            <a href="#" class="nav-link-icon"><i class="fa fa-linkedin"></i></a>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
+                <li class="nav-item"><a class="nav-link active" href="#">Projects</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://lynk.id/disableflow">Order Illustration</a></li>
+            </ul>
+        </div>
     </div>
-  </nav>
+</nav>
 
   <section class="ftco-section">
     <div class="container container-projects">
@@ -127,36 +266,43 @@
   </section>
 
   <script>
+    // DAFTAR KONTEN GAMBAR KAMU
     const projects = [
       { name: "Corona Character", cat: "Vector Design", img: "images/corona.jpg", url: "https://lynk.id/disableflow/xk1e94x5p1rp" },
-      { name: "Meat Character", cat: "Illustration", img: "images/daging.jpg", url: "#" },
-      { name: "Burger Mascot", cat: "Digital Art", img: "images/Burger.png", url: "#" },
-      { name: "Donut Mascot", cat: "UI Icon", img: "images/donat.png", url: "#" },
-      { name: "Logo Earth", cat: "Branding", img: "images/bumi.jpg", url: "#" },
-      { name: "Ice Cream Logo", cat: "Branding", img: "images/eskrim.jpg", url: "#" },
-      { name: "Heart Logo", cat: "Branding", img: "images/jantung.png", url: "#" },
-      { name: "Potato Logo", cat: "Branding", img: "images/kentang.jpg", url: "#" },
+      { name: "Meat Character", cat: "Illustration", img: "images/daging.jpg", url: "https://lynk.id/disableflow/py154707p2wy" },
+      { name: "Burger Mascot", cat: "Digital Art", img: "images/Burger.png", url: "https://lynk.id/disableflow/vqngdy4eewrq" },
+      { name: "Donut Mascot", cat: "UI Icon", img: "images/donat.png", url: "https://lynk.id/disableflow/l1lp43rq6e6r" },
+      { name: "Logo Earth", cat: "Branding", img: "images/bumi.jpg", url: "https://lynk.id/disableflow/k492zw462odn" },
+      { name: "Ice Cream Logo", cat: "Branding", img: "images/eskrim.jpg", url: "https://lynk.id/disableflow/4qlpz4jgod07" },
+      { name: "Heart Logo", cat: "Branding", img: "images/jantung.png", url: "https://lynk.id/disableflow/we967o2xo2wp" },
+      { name: "Potato Logo", cat: "Branding", img: "images/kentang.jpg", url: "https://lynk.id/disableflow/61gdz76d6o3v" },
       { name: "Peanepir Logo", cat: "Branding", img: "images/peanepir.png", url: "#" },
-      { name: "Pencil Logo", cat: "Branding", img: "images/pensil.jpg", url: "#" },
-      { name: "Pizza Logo", cat: "Branding", img: "images/pizza.jpg", url: "#" },
-      { name: "Pumpkin Logo", cat: "Branding", img: "images/pumkin.jpg", url: "#" },
-      { name: "Botol Mascot", cat: "Branding", img: "images/botol.png", url: "#" },
-      { name: "Cangkir Mascot", cat: "Branding", img: "images/cangkir.jpg", url: "#" },
-      { name: "Basketball Mascot", cat: "Branding", img: "images/basket.jpg", url: "#" },
-      { name: "Sandwich Mascot", cat: "Ilustrator", img: "images/Sandwich.png", url: "#" },
-      { name: "Saturnus Mascot", cat: "Branding", img: "images/saturnuss.png", url: "#" },
-      { name: "Keju Mascot", cat: "Branding", img: "images/kejuuu.png", url: "#" },
-      { name: "Tulang Daging", cat: "Images", img: "images/balungg.png", url: "#" },
-      { name: "Pumpkin Mascot", cat: "Images", img: "images/pumkinn.png", url: "#" },
-      { name: "Daisy Flower", cat: "Images", img: "images/bunga daisy.png", url: "#" },
-      { name: "Hotdog Mascot", cat: "Images", img: "images/hotdog.png", url: "#" },
-      { name: "Butt Fruit Mascot", cat: "Images", img: "images/buah pantat1.png", url: "#" }
+      { name: "Pencil Logo", cat: "Branding", img: "images/pensil.jpg", url: "https://lynk.id/disableflow/r916vp8jdwej" },
+      { name: "Pizza Logo", cat: "Branding", img: "images/pizza.jpg", url: "https://lynk.id/disableflow/1061xrkrzpqm" },
+      { name: "Pumpkin Logo", cat: "Branding", img: "images/pumkin.jpg", url: "https://lynk.id/disableflow/gn9vm3ovkkjp" },
+      { name: "Botol Mascot", cat: "Branding", img: "images/botol.png", url: "https://lynk.id/disableflow/oo1e930wdyx6" },
+      { name: "Cangkir Mascot", cat: "Branding", img: "images/cangkir.jpg", url: "https://lynk.id/disableflow/np9wq6v4w53w" },
+      { name: "Basketball Mascot", cat: "Branding", img: "images/basket.jpg", url: "https://lynk.id/disableflow/9qo2n1g9gn9m" },
+      { name: "Sandwich Mascot", cat: "Ilustrator", img: "images/Sandwich.png", url: "https://lynk.id/disableflow/703496y6nm2w" },
+      { name: "Saturnus Mascot", cat: "Branding", img: "images/saturnuss.png", url: "https://lynk.id/disableflow/5637oqg437o2" },
+      { name: "Keju Mascot", cat: "Branding", img: "images/kejuuu.png", url: "https://lynk.id/disableflow/myqrejxmqvv2" },
+      { name: "Tulang Daging", cat: "Images", img: "images/balungg.png", url: "https://lynk.id/disableflow/3l7vmm7rqp92" },
+      { name: "Pumpkin Mascot", cat: "Images", img: "images/pumkinn.png", url: "https://lynk.id/disableflow/jv9w0g0zj8e8" },
+      { name: "Daisy Flower", cat: "Images", img: "images/bunga daisy.png", url: "https://lynk.id/disableflow/8grxvoznrwl2" },
+      { name: "Hotdog Mascot", cat: "Images", img: "images/hotdog.png", url: "https://lynk.id/disableflow/x8914z3d6o1m" },
+      { name: "Butt Fruit Mascot", cat: "Images", img: "images/buah pantat1.png", url: "#" },
+      { name: "Mushroom", cat: "Images", img: "images/jamur.jpg", url: "https://lynk.id/disableflow/vn140wdq94p4" },
+      { name: "Vodka", cat: "Images", img: "images/vodka.png", url: "https://lynk.id/disableflow/p0kqm4ymegw1" },
+      { name: "Pohon", cat: "Images", img: "images/pohon.jpg", url: "https://lynk.id/disableflow/0g530dq19n2g" }
     ];
 
     const row = document.getElementById("project-row");
+    
+    // Generate ke-23 kartu secara otomatis
     projects.forEach(p => {
       let trackers = "";
       for(let i=1; i<=25; i++) {
+        // Tracker 13 bertindak sebagai link, yang lainnya hanya sensor gerakan
         if(i === 13) trackers += `<a href="${p.url}" class="tracker tr-13"></a>`;
         else trackers += `<div class="tracker tr-${i}"></div>`;
       }
@@ -175,8 +321,8 @@
         </div>`;
     });
 
-    // TYPING EFFECT ASLI
-    const text = "Saya adalah seorang ilustrator dan design grafis, hobby saya membuat karakter dengan konsep ilustrasi.";
+    // TYPING EFFECT ASLI KAMU
+    const text = "Saya adalah seorang ilustrator dan design grafis, hobby saya membuat karakter dengan konsep ilustrasi, Request/Order My Ilustration in digital products ⤵️";
     const el = document.getElementById("typing-text");
     let idx = 0;
     function type() { if(idx < text.length) { el.innerHTML += text.charAt(idx); idx++; setTimeout(type, 40); } }
