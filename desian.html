@@ -9,6 +9,20 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
   <style>
+  .navbar-toggler-icon {
+      /* Menggunakan SVG custom dengan stroke warna kuning #ffbd39 */
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3Cpath stroke='%23ffbd39' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3C/svg%3e") !important;
+  }
+
+  /* Efek saat tombol di-hover atau di-klik sesuai permintaanmu */
+  .navbar-toggler:hover, 
+  .navbar-toggler:focus {
+      text-decoration: none;
+      outline: none !important;
+      border-color: #ffbd39 !important;
+      box-shadow: 0 0 8px rgba(255, 189, 57, 0.5);
+  }
+
     /* --- RESET & BASE --- */
     * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
     body { background: #000; color: white; font-family: 'Poppins', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
@@ -22,9 +36,9 @@
       top: 0;
       z-index: 9999;
     }
-    .navbar-brand { font-weight: 900; letter-spacing: 1px; color: #fff !important; }
+    .navbar-brand { font-weight: 900; letter-spacing: 0px; color: #fff !important; }
     .nav-link { color: rgba(255,255,255,0.7) !important; font-weight: 400; }
-    .nav-link.active { color: #FFD700 !important; border-bottom: 2px solid #FFD700; }
+    .nav-link.active { color: #FFD700 !important; }
 
     /* --- HEADER ASLI --- */
     .ftco-section { padding: 40px 0; }
@@ -223,6 +237,33 @@
 .nav-link-icon:hover {
     color: #ffbd39 !important;
     transform: translateY(-3px);
+
+}
+@media (max-width: 576px) {
+    /* Menghilangkan padding pada container agar konten menyentuh tepi layar */
+    .container-projects {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        max-width: 90% !important;
+    }
+
+    /* Menghilangkan padding pada kolom agar kartu memenuhi lebar */
+    .project-col {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+
+    /* Menghilangkan border-radius jika ingin benar-benar 'kotak' memenuhi layar */
+    .project-card-ui {
+        border-radius: 20px !important; 
+        border-left: none;
+        border-right: none;
+    }
+    
+    .project-container {
+        height: 350px; /* Opsional: sedikit lebih tinggi di mobile agar puas dilihat */
+        margin-bottom: 10px; /* Jarak antar kartu lebih rapat */
+    }
 }
   </style>
 </head>
@@ -307,19 +348,19 @@
         if(i === 13) trackers += `<a href="${p.url}" class="tracker tr-13"></a>`;
         else trackers += `<div class="tracker tr-${i}"></div>`;
       }
-      row.innerHTML += `
-        <div class="col-12 col-sm-6 col-md-4 mb-4">
-          <div class="project-container">
-            <div class="canvas">${trackers}
-              <div class="project-card-ui" style="background-image: url('${p.img}');">
-                <div class="overlay-content">
-                  <h3>${p.name}</h3>
-                  <span>${p.cat}</span>
-                </div>
+          
+    row.innerHTML += `
+      <div class="col-12 col-sm-6 col-md-4 mb-4 project-col"> <div class="project-container">
+          <div class="canvas">${trackers}
+            <div class="project-card-ui" style="background-image: url('${p.img}');">
+              <div class="overlay-content">
+                <h3>${p.name}</h3>
+                <span>${p.cat}</span>
               </div>
             </div>
           </div>
-        </div>`;
+        </div>
+      </div>`;
     });
 
     // TYPING EFFECT ASLI KAMU
