@@ -59,6 +59,22 @@
                 right: 0;
                 z-index: -1;
             }
+
+                    /* Pastikan section hero tidak mengunci scroll */
+        .hero {
+            height: auto !important;
+            overflow: visible !important;
+        }
+
+        .home-slider, .home-slider .slider-item {
+            height: 100vh !important;
+            min-height: 600px;
+        }
+
+        /* Memastikan overlay tidak menghalangi interaksi scroll di mobile */
+        .hero .overlay {
+            pointer-events: none;
+        }
         }
         .project {
         height: 300px;
