@@ -60,21 +60,34 @@
                 z-index: -1;
             }
 
-                    /* Pastikan section hero tidak mengunci scroll */
-        .hero {
-            height: auto !important;
-            overflow: visible !important;
-        }
+            /* 1. PAKSA SEMUA AREA HERO AGAR BISA DISKROLL */
+.hero, 
+.home-slider, 
+.slider-item, 
+.container, 
+.row.slider-text {
+    touch-action: pan-y !important;
+    -ms-touch-action: pan-y !important;
+    pointer-events: auto !important;
+}
 
-        .home-slider, .home-slider .slider-item {
-            height: 100vh !important;
-            min-height: 600px;
-        }
+/* 2. MATIKAN FUNGSI KLIK/SENTUH PADA OVERLAY GAGAL */
+.hero .overlay {
+    pointer-events: none !important;
+    z-index: 0 !important;
+}
 
-        /* Memastikan overlay tidak menghalangi interaksi scroll di mobile */
-        .hero .overlay {
-            pointer-events: none;
-        }
+/* 3. PASTIKAN KONTEN TETAP DI ATAS TAPI TIDAK MENGUNCI */
+.hero .one-forth, .hero .text {
+    z-index: 2 !important;
+    position: relative !important;
+}
+
+/* 4. PERBAIKAN KHUSUS UNTUK OWL CAROUSEL */
+.owl-carousel, .owl-stage-outer, .owl-stage {
+    touch-action: pan-y !important;
+}
+
         }
         .project {
         height: 300px;
@@ -204,7 +217,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
     <div class="container">
         <div class="d-flex align-items-center">
-            <a class="navbar-brand mr-3" href="index.html">MUHAMAD JOKOWI</a>
+            <a class="navbar-brand mr-3" href="index.html">MUHAMAD LUTHFIAN</a>
             
             <div class="nav-social-icons d-flex align-items-center">
                 <a href="https://github.com/viann980" class="nav-link-icon"><i class="fa fa-github"></i></a>
@@ -932,7 +945,7 @@
                         <li data-target="#experienceCarousel" data-slide-to="11"></li>
                     </ol>
 
-                    < class="carousel-inner">
+                    <div class="carousel-inner">
                         <div class="carousel-item active">
                             <div class="carousel-img-container">
                                 <img src="images/dc1.jpg" class="d-block w-100" alt="Work 1">
