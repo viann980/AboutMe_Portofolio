@@ -93,6 +93,12 @@
 	    nav:false,
 	    autoplayHoverPause: false,
 	    items: 1,
+		dots: true, // Pastikan dots aktif agar user tahu ada 2 slide
+		autoplayHoverPause: false,
+		items: 1,
+		mouseDrag: true, // Ubah ke false jika masih terasa mengunci di desktop
+		touchDrag: true, // Pastikan ini true agar bisa di-swipe di mobile
+		pullDrag: true,
 	    navText : ["<span class='ion-md-arrow-back'></span>","<span class='ion-chevron-right'></span>"],
 	    responsive:{
 	      0:{
