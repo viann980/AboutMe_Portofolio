@@ -215,89 +215,52 @@
     </div>
 </nav>
 
-      <section id="Home" class="hero">
-          <div class="home-slider  owl-carousel">
-          <div class="slider-item ">
+     <section id="Home" class="hero">
+    <div class="home-slider owl-carousel">
+        <div class="slider-item">
             <div class="overlay"></div>
             <div class="container">
-              <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-                <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/viann1.png);">
-                    <div class="overlay"></div>
-                </div>
-                <div class="one-forth d-flex align-items-center ftco-animate">
-                    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
-
-                    <script>
-                    // Efek mengetik untuk Nama
-                    var typedName = new Typed('#typed-name', {
-                        strings: ['Muhamad Luthfian'], // Nama kamu
-                        typeSpeed: 100,
-                        backSpeed: 50,
-                        loop: false, // Nama cukup diketik sekali saja agar elegan
-                        showCursor: false,
-                        cursorChar: '|'
-                    });
-
-                    // Efek mengetik untuk Profesi
-                    var typedJob = new Typed('#typed-job', {
-                        strings: [
-                        'FrontEnd Developer', 
-                        ], // Bisa diisi banyak profesi bergantian
-                        typeSpeed: 70,
-                        backSpeed: 40,
-                        backDelay: 2000, // Jeda sebelum menghapus teks
-                        loop: true, // Profesi berulang terus
-                        showCursor: true,
-                        cursorChar: '|'
-                    });
-
-                    var typedMotion = new Typed('#typed-motion', {
-                        strings: [
-                        'Illustrations Artist Design', ], // Bisa diisi banyak profesi bergantian
-                        typeSpeed: 100, 
-                        backSpeed: 50,
-                        backDelay: 2000,
-                        loop: true, // Nama cukup diketik sekali saja agar elegan
-                        showCursor: true,
-                        cursorChar: '|'    
-                    });
-                    </script>
-
-                   <div class="text">
-                        <span class="subheading">Hello</span>
-                        <h1 class="mb-4 mt-3">I'm <span id="typed-name" style="color: #ffbd39;"></span></h1>
-                        <h2 class="mb-4"><span id="typed-job"></span></h2>
-                        <p>
-                            <a href="https://github.com/viann980" class="btn btn-primary py-3 px-4">My Program Project</a> 
-                            <a href="#" class="btn btn-white btn-outline-white py-3 px-4">CV</a>
-                        </p>
+                <div class="row d-md-flex no-gutters slider-text align-items-center justify-content-end">
+                    <div class="one-third order-md-last img" style="background-image:url(images/viann1.png);">
+                        <div class="overlay"></div>
                     </div>
-                  </div>
+                    <div class="one-forth d-flex align-items-center ftco-animate">
+                        <div class="text">
+                            <span class="subheading">Hello</span>
+                            <h1 class="mb-4 mt-3">I'm <span id="typed-name" style="color: #ffbd39;"></span></h1>
+                            <h2 class="mb-4"><span id="typed-job"></span></h2>
+                            <p>
+                                <a href="https://github.com/viann980" class="btn btn-primary py-3 px-4">My Program Project</a> 
+                                <a href="#" class="btn btn-white btn-outline-white py-3 px-4">CV</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-          </div>
+        </div>
 
-          <div class="slider-item">
+        <div class="slider-item">
             <div class="overlay"></div>
             <div class="container">
-              <div class="row d-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
-                <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/vian5.png);">
-                    <div class="overlay"></div>
-                </div>
-
-            <div class="one-forth d-flex align-items-center ftco-animate">
-                <div class="text">
-                    <span class="subheading">Hello</span>
-                    <h1 class="mb-4 mt-3">I'm a <span id="typed-motion" style="color: #ffbd39;"></span></h1>
-                    <p>
-                        <a href="desian.html" class="btn btn-primary py-3 px-4">My Project Desain</a> 
-                        <a href="#About" class="btn btn-white btn-outline-white py-3 px-4">About</a>
-                    </p>
+                <div class="row d-flex no-gutters slider-text align-items-center justify-content-end">
+                    <div class="one-third order-md-last img" style="background-image:url(images/vian5.png);">
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="one-forth d-flex align-items-center ftco-animate">
+                        <div class="text">
+                            <span class="subheading">Hello</span>
+                            <h1 class="mb-4 mt-3">I'm a <span id="typed-motion" style="color: #ffbd39;"></span></h1>
+                            <p>
+                                <a href="desian.html" class="btn btn-primary py-3 px-4">My Project Desain</a> 
+                                <a href="#About" class="btn btn-white btn-outline-white py-3 px-4">About</a>
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
-          </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <section class="ftco-about img ftco-section ftco-no-pb" id="About">
         <div class="container">
@@ -1219,6 +1182,34 @@
   
   <script src="js/main.js"></script>
   <script src="js/vian.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var typedName = new Typed('#typed-name', {
+            strings: ['Muhamad Luthfian'],
+            typeSpeed: 100,
+            backSpeed: 50,
+            loop: false,
+            showCursor: false
+        });
+
+        var typedJob = new Typed('#typed-job', {
+            strings: ['FrontEnd Developer'],
+            typeSpeed: 70,
+            backSpeed: 40,
+            backDelay: 2000,
+            loop: true
+        });
+
+        var typedMotion = new Typed('#typed-motion', {
+            strings: ['Illustrations Artist Design'],
+            typeSpeed: 100, 
+            backSpeed: 50,
+            backDelay: 2000,
+            loop: true
+        });
+    });
+</script>
     
   </body>
 </html>
