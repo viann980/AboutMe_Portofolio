@@ -178,6 +178,6 @@
 
 /* Jika menggunakan icon font-awesome atau span biasa */
 .navbar-toggler {
-    border: 1px solid rgba(255,255,255,0.1) !important;
+    border: 0px solid rgba(255,255,255,0.1) !important;
     padding: 10px !important;
 }

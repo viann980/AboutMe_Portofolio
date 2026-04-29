@@ -180,6 +180,21 @@
             50% { opacity: 0; }
             100% { opacity: 1; }
         }
+
+        /* Sembunyikan tombol menu di layar desktop (lebar > 992px) */
+@media (min-width: 992px) {
+    .navbar-toggler.d-lg-none {
+        display: none !important;
+    }
+}
+
+/* Pastikan list menu tetap muncul di desktop */
+@media (min-width: 992px) {
+    .navbar-collapse {
+        display: flex !important;
+        flex-basis: auto;
+    }
+}
     </style>
 
   </head>
@@ -190,7 +205,7 @@
         <div class="d-flex align-items-center">
             <a class="navbar-brand mr-3" href="index.html">MUHAMAD LUTHFIAN</a>
             
-            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" style="border: 1px solid #e2c012; padding: 2px 10px; font-size: 14px;">
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle d-lg-none" type="button" data-toggle="collapse" data-target="#ftco-nav" ... >
                 <span class="oi oi-menu"></span> MENU
             </button>
         </div>

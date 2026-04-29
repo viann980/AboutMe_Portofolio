@@ -6605,7 +6605,7 @@ button.bg-dark:focus {
 
 .mt-3,
 .my-3 {
-  margin-top: 1rem !important; }
+  margin-top: 0.5rem !important; }
 
 
 .mb-3,
@@ -8515,7 +8515,7 @@ h1, h2, h3, h4, h5,
         .owl-carousel.home-slider .slider-item .slider-text .subheading {
           color: #000000;
           font-weight: 600;
-          font-size: 15px;
+          font-size: 13px;
           letter-spacing: 3px;
           text-transform: uppercase;
           color: #ffbd39; }
