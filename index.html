@@ -130,39 +130,39 @@
             vertical-align: middle;
         }
 
-                /* Menghilangkan padding default link agar pas di samping nama */
-        .nav-link-icon {
-            color: #fff !important;
-            font-size: 16px;
-            margin-left: 12px;
-            transition: 0.3s;
-            display: inline-block;
-        }
+        /* Keadaan Default (Saat di atas) */
+.navbar-toggler {
+    display: flex !important;
+    align-items: center;
+    gap: 5px; /* Jarak antara ikon dan tulisan Menu */
+    padding: 4px 15px !important;
+}
 
-        .nav-link-icon:hover {
-            color: #ffbd39 !important; /* Warna kuning template kamu */
-        }
+/* Ukuran Ikon Hamburger */
+.navbar-toggler .oi-menu {
+    font-size: 19px !important; /* Ubah ukuran ikon di sini */
+}
 
-        /* Memastikan kontainer utama tidak membungkus ke bawah */
-        .navbar .container {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            margin-bottom: 10px !important;
-        }
+/* Ukuran Tulisan "MENU" */
+.navbar-toggler {
+    font-size: 15px !important; /* Ubah ukuran teks di sini */
+    text-transform: uppercase;
+    font-weight: 600;
+}
 
-        /* Penyesuaian Mobile agar tidak sesak */
-        @media (max-width: 767.98px) {
-            .navbar-brand {
-                font-size: 23px; /* Kecilkan font nama sedikit di mobile */
-                margin-right: 5px !important;
-            }
-            
-            .nav-link-icon {
-                margin-left: 8px;
-                font-size: 14px;
-            }
-        }
+/* --- Pengaturan Saat di-Scroll --- */
+/* Kita targetkan class navbar saat aktif/scrolled */
+.ftco_navbar.scrolled .navbar-toggler,
+.ftco_navbar.sleep .navbar-toggler {
+    padding: 4px 20px !important; /* Ukuran tombol sedikit mengecil saat scroll */
+    font-size: 13px !important;    /* Ukuran teks saat scroll */
+    margin-right: 2.rem !important;
+}
+
+.ftco_navbar.scrolled .navbar-toggler .oi-menu,
+.ftco_navbar.sleep .navbar-toggler .oi-menu {
+    font-size: 18px !important;    /* Ukuran ikon saat scroll */
+}
 
                 .typed-cursor {
             color: #ffbd39;
@@ -185,20 +185,15 @@
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
       
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+ <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
     <div class="container">
         <div class="d-flex align-items-center">
             <a class="navbar-brand mr-3" href="index.html">MUHAMAD LUTHFIAN</a>
             
-            <div class="nav-social-icons d-flex align-items-center">
-                <a href="https://github.com/viann980" class="nav-link-icon"><i class="fa fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/muhamad-luthfian-338759333/" class="nav-link-icon"><i class="fa fa-linkedin"></i></a>
-            </div>
+            <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation" style="border: 1px solid #e2c012; padding: 2px 10px; font-size: 14px;">
+                <span class="oi oi-menu"></span> MENU
+            </button>
         </div>
-
-        <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="oi oi-menu"></span> Menu
-        </button>
 
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav nav ml-auto">

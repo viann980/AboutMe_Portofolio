@@ -3458,7 +3458,6 @@ input[type="button"].btn-block {
   display: inline-block;
   padding-top: 0.3125rem;
   padding-bottom: 0.3125rem;
-  margin-right: 1rem;
   font-size: 1.25rem;
   line-height: inherit;
   white-space: nowrap; }
@@ -6608,9 +6607,6 @@ button.bg-dark:focus {
 .my-3 {
   margin-top: 1rem !important; }
 
-.mr-3,
-.mx-3 {
-  margin-right: 1rem !important; }
 
 .mb-3,
 .my-3 {
@@ -8288,8 +8284,7 @@ h1, h2, h3, h4, h5,
     cursor: pointer;
     padding-right: 0;
     text-transform: uppercase;
-    font-size: 16px;
-    letter-spacing: .1em; }
+    font-size: 17px;}
     .ftco-navbar-light .navbar-toggler:hover, .ftco-navbar-light .navbar-toggler:focus {
       text-decoration: none;
       color: #ffbd39;
@@ -8352,6 +8347,7 @@ h1, h2, h3, h4, h5,
         color: #ffbd39 !important; }
     .ftco-navbar-light.scrolled.awake {
       margin-top: 0px;
+      margin-bottom: 5px;
       -webkit-transition: .3s all ease-out;
       -o-transition: .3s all ease-out;
       transition: .3s all ease-out; }
@@ -8367,7 +8363,7 @@ h1, h2, h3, h4, h5,
 
 .navbar-brand {
   font-weight: 900;
-  font-size: 24px;
+  font-size: 23px;
   text-transform: uppercase; }
 
 .hero h3.vr {
@@ -8519,7 +8515,7 @@ h1, h2, h3, h4, h5,
         .owl-carousel.home-slider .slider-item .slider-text .subheading {
           color: #000000;
           font-weight: 600;
-          font-size: 14px;
+          font-size: 15px;
           letter-spacing: 3px;
           text-transform: uppercase;
           color: #ffbd39; }
