@@ -34,32 +34,84 @@
             overflow-x: hidden !important;
         }
 
-        /* KHUSUS MOBILE: Menaikkan posisi teks Hero agar tidak menutupi wajah */
-        @media (max-width: 767.98px) {
-            .hero .slider-item .one-forth {
-                /* Mengubah alignment dari center ke start (atas) */
-                align-items: flex-start !important; 
-                /* Memberikan jarak dari atas agar tidak terlalu mepet header */
-                padding-top: 100px; 
-            }
-            
-            .hero .slider-item .text {
-                /* Memastikan teks naik */
-                margin-top: 0 !important;
-            }
-            
-            /* Menyesuaikan posisi background image di mobile jika perlu */
-            .hero .slider-item .one-third {
-                background-position: center bottom !important;
-                background-size: cover;
-                height: 100vh; /* Memastikan gambar full height di belakang */
-                position: absolute;
-                top: 0;
-                left: 0;
-                right: 0;
-                z-index: -1;
-            }
-        }
+    @media (max-width: 767.98px) {
+    /* 1. Atur container utama agar konten bisa disusun secara vertikal dengan benar */
+    .hero .slider-item {
+        height: 100vh !important;
+        height: 100svh !important;
+        display: flex !important;
+        align-items: flex-start !important; /* Ubah ke start agar kita bisa atur jarak manual dari atas */
+        justify-content: center !important;
+        padding: 0 !important;
+    }
+
+    /* 2. Container teks: Kita beri padding atas agar tulisan "Hello" turun ke posisi ideal */
+    .hero .slider-text {
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important; /* Ini akan mendorong tombol ke bawah */
+        align-items: center !important;
+        text-align: center;
+        padding-top: 130px !important; /* KUNCI: Menurunkan teks agar tidak terlalu ke atas */
+        padding-bottom: 40px !important; /* KUNCI: Menjaga tombol tidak menabrak bar browser */
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    /* Mengatur jarak antara elemen teks agar tidak terlalu renggang */
+    .hero .slider-item .text {
+        margin-top: 0 !important;
+        width: 100%;
+    }
+
+    .hero .slider-item .text .subheading {
+        margin-bottom: 0 !important;
+        letter-spacing: 2px;
+    }
+
+    .hero .slider-item .text h1 {
+        font-size: 30px !important;
+        line-height: 1.1 !important;
+        margin-bottom: 10px !important;
+    }
+
+    .hero .slider-item .text h2 {
+        font-size: 18px !important;
+        margin-bottom: 10px !important;
+    }
+
+    /* 3. Area Tombol: Pastikan area ini memiliki z-index tinggi agar bisa diklik */
+    .hero .slider-item .one-forth {
+        width: 100% !important;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero .slider-item .btn {
+        padding: 15px 18px !important;
+        font-size: 13px !important;
+        margin: 2px !important;
+        display: inline-block !important;
+    }
+
+    /* 4. Background: Pastikan wajah kamu tetap terlihat di tengah */
+    .hero .slider-item .one-third {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        z-index: 0 !important;
+        background-position: center 20% !important; /* Menggeser posisi foto agar wajah tidak tertutup teks */
+        background-size: cover !important;
+    }
+
+    /* Overlay agar teks lebih terbaca */
+    .hero .slider-item .overlay {
+        z-index: 1 !important;
+    }
+}
         .project {
         height: 300px;
         background-size: cover;
