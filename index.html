@@ -34,15 +34,18 @@
             overflow-x: hidden !important;
         }
 
-    @media (max-width: 767.98px) {
-    /* 1. Atur container utama agar konten bisa disusun secara vertikal dengan benar */
-    .hero .slider-item {
-        height: 100vh !important;
-        height: 100svh !important;
-        display: flex !important;
-        align-items: flex-start !important; /* Ubah ke start agar kita bisa atur jarak manual dari atas */
-        justify-content: center !important;
-        padding: 0 !important;
+    /* 2. KHUSUS MOBILE: Penyesuaian agar button tidak terpotong */
+@media (max-width: 767.98px) {
+    .hero .slider-item .one-forth {
+        /* Menggunakan flex untuk membagi ruang secara vertikal */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between; /* Menyebar konten */
+        align-items: center !important;
+        text-align: center;
+        padding-top: 80px; /* Jarak dari Navbar */
+        padding-bottom: 40px; /* Jarak aman untuk button di bawah */
+        height: 100% !important;
     }
 
     /* 2. Container teks: Kita beri padding atas agar tulisan "Hello" turun ke posisi ideal */
