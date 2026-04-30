@@ -28,70 +28,38 @@
     <link rel="stylesheet" href="css/dropdown.css">
 
     <style>
-      /* 1. Pastikan Body dan Section Hero menempati 100% layar tanpa scroll */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
+        /* CSS FIX: Mencegah scroll horizontal */
+        html, body {
+            max-width: 100% !important;
+            overflow-x: hidden !important;
+        }
 
-.hero {
-    height: 100vh; /* Fallback */
-    height: 100svh; /* Presisi untuk mobile browser */
-    overflow: hidden;
-    position: relative;
-}
-
-.home-slider, .slider-item {
-    height: 100vh !important;
-    height: 100svh !important;
-}
-
-/* 2. KHUSUS MOBILE: Penyesuaian agar button tidak terpotong */
-@media (max-width: 767.98px) {
-    .hero .slider-item .one-forth {
-        /* Menggunakan flex untuk membagi ruang secara vertikal */
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Menyebar konten */
-        align-items: center !important;
-        text-align: center;
-        padding-top: 80px; /* Jarak dari Navbar */
-        padding-bottom: 40px; /* Jarak aman untuk button di bawah */
-        height: 100% !important;
-    }
-
-    .hero .slider-item .text {
-        margin-top: 0 !important;
-        width: 100%;
-    }
-
-    /* Kecilkan ukuran font h1 agar tidak memakan terlalu banyak ruang */
-    .hero .slider-item .text h1 {
-        font-size: 28px !important;
-        margin-bottom: 10px !important;
-    }
-
-    .hero .slider-item .text h2 {
-        font-size: 20px !important;
-    }
-
-    /* Ukuran Button diperkecil sedikit agar muat */
-    .hero .slider-item .btn {
-        padding: 10px 20px !important;
-        font-size: 14px;
-        display: inline-block;
-        margin: 5px;
-    }
-
-    /* Pastikan gambar background tetap di tengah dan tidak terpotong aneh */
-    .hero .slider-item .one-third {
-        height: 100% !important;
-        background-position: center center !important;
-        background-size: cover !important;
-    }
-}
+        /* KHUSUS MOBILE: Menaikkan posisi teks Hero agar tidak menutupi wajah */
+        @media (max-width: 767.98px) {
+            .hero .slider-item .one-forth {
+                /* Mengubah alignment dari center ke start (atas) */
+                align-items: flex-start !important; 
+                /* Memberikan jarak dari atas agar tidak terlalu mepet header */
+                padding-top: 100px; 
+            }
+            
+            .hero .slider-item .text {
+                /* Memastikan teks naik */
+                margin-top: 0 !important;
+            }
+            
+            /* Menyesuaikan posisi background image di mobile jika perlu */
+            .hero .slider-item .one-third {
+                background-position: center bottom !important;
+                background-size: cover;
+                height: 100vh; /* Memastikan gambar full height di belakang */
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                z-index: -1;
+            }
+        }
         .project {
         height: 300px;
         background-size: cover;
