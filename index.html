@@ -79,7 +79,7 @@ html, body {
 
     /* Ukuran Button diperkecil sedikit agar muat */
     .hero .slider-item .btn {
-        padding: 10px 20px !important;
+        padding: 14px 20px !important;
         font-size: 14px;
         display: inline-block;
         margin: 5px;
@@ -92,6 +92,34 @@ html, body {
         background-size: cover !important;
     }
     
+    @media (max-width: 767.98px) {
+    /* Memastikan slider item mengambil tinggi layar penuh */
+    .slider-item {
+        height: 100vh !important;
+        height: 100svh !important;
+        position: relative;
+    }
+
+    /* Memaksa foto memenuhi seluruh area belakang */
+    .hero .slider-item .one-third {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        background-size: cover !important;
+        background-position: center top !important; /* Fokus ke wajah */
+        z-index: 0 !important;
+    }
+
+    /* Mengatur area teks agar melayang di atas foto */
+    .hero .slider-item .one-forth {
+        width: 100% !important;
+        padding: 0 15px !important; /* Padding kanan-kiri yang Anda inginkan */
+        text-align: center;
+        z-index: 1 !important;
+    }
+}
 }
         .project {
         height: 300px;

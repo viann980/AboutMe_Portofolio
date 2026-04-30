@@ -76,7 +76,7 @@
                 margin-bottom: 95px !important; 
                 display: flex;
                 justify-content: center; /* Tombol rata tengah agar rapi */
-                gap: 10px; /* Jarak antar tombol */
+                gap: 8px; /* Jarak antar tombol */
             }
 
             /* 5. Mengatur Gambar Background agar Wajah Terlihat */
