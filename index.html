@@ -604,14 +604,14 @@ html, body {
     <section class="ftco-section ftco-no-pb" id="Softskill">
         <div class="container">
             <div class="row justify-content-center py-5 mt-5">
-          <div class="col-md-12 heading-section text-center ftco-animate">
+        <div class="col-md-12 heading-section text-center ftco-animate">
             <h1 class="big big-2">Softskill</h1>
             <h2 class="mb-4">Softskill</h2>
             <p>Soft skills that I have for professional work world</p>
-          </div>
+        </div>
         <div class="row justify-content-center">
 			<div class="col-md-6 text-center d-flex ftco-animate">
-			  <a  class="services-1">
+			<a  class="services-1">
 							<span class="icon">
 								<i class="flaticon-analysis"></i>
 							</span>
@@ -633,7 +633,6 @@ html, body {
 								<h3 class="mb-5"><i class="fi fi-rr-brightness"></i>Able To Work Individually and In a Team</h3>
 								<h3 class="mb-5"><i class="fi fi-rr-brightness"></i>Open Mindedness</h3>
                                 <h3 class="mb-5"><i class="fi fi-rr-brightness"></i>English language skills</h3>
-							
 							</div>
 						</a>
 					</div>
@@ -643,155 +642,357 @@ html, body {
         </div>
     </section>
 
-        
-   <section class="ftco-section" id="Skills">
+<section class="ftco-section" id="Skills">
     <div class="container">
         <div class="row justify-content-center pb-5">
             <div class="col-md-12 heading-section text-center ftco-animate">
                 <h1 class="big big-2">Skills</h1>
                 <h2 class="mb-4">My Skills</h2>
-                <p>Tools that I use in development and editing</p>
+                <p>Detailed proficiency in tools I use for development and editing</p>
             </div>
         </div>
 
         <style>
-            .progress-wrap {
-                width: 100%;
-                margin-bottom: 30px;
-            }
-            .skill-header {
+            /* Mengubah Grid menjadi Flexbox untuk menengahkan sisa baris */
+            .skills-grid {
                 display: flex;
+                flex-wrap: wrap;
+                justify-content: center; /* KUNCI UTAMA: Menengahkan baris terakhir */
+                gap: 20px; 
+                padding: 15px 0;
+            }
+
+            /* Styling Dasar Kartu dengan Ukuran Tetap */
+            .skill-card-single {
+                width: 150px; /* Dikunci di 150px agar ramping dan konsisten rata atas-bawah */
+                flex: 0 0 auto; /* Mencegah kartu memanjang/menyusut otomatis */
+                background: rgba(255, 255, 255, 0.02);
+                border: 1px solid rgba(255, 255, 255, 0.05);
+                border-radius: 14px; 
+                padding: 24px 16px; 
+                text-align: center;
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                            box-shadow 0.4s ease, border-color 0.4s ease;
+                display: flex;
+                flex-direction: column;
                 align-items: center;
                 justify-content: space-between;
-                flex-wrap: wrap;
-                margin-bottom: 10px;
+                position: relative;
+                overflow: hidden;
             }
-            .skill-header h3 {
-                font-size: 20px;
-                font-weight: 600;
-                margin-bottom: 0;
-                color: #fff;
+
+            /* Efek Hover Kartu */
+            .skill-card-single:hover {
+                transform: translateY(-8px); 
+                border-color: #ffbd39;
+                box-shadow: 0 10px 25px rgba(255, 189, 57, 0.275);
+                background: rgba(255, 255, 255, 0.03);
             }
-            .skill-logos-inline {
-                display: flex;
-                gap: 8px;
+
+            /* Teks Kategori (Paling atas) */
+            .tool-category {
+                font-size: 10px; 
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                color: rgba(255, 255, 255, 0.4);
+                margin-bottom: 16px; 
+                font-weight: 500;
             }
-            .skill-logos-inline img {
-                width: 26px;
+
+            /* Wrapper Logo */
+            .tool-logo-wrap {
+                width: 50px; 
                 height: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 16px;
+            }
+
+            .tool-logo-wrap img {
+                max-width: 100%;
+                max-height: 100%;
                 object-fit: contain;
-                transition: transform 0.3s;
-                filter: drop-shadow(0px 2px 4px rgba(0,0,0,0.3));
+                transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.3));
             }
-            .skill-logos-inline img:hover {
-                transform: scale(1.4);
+
+            .skill-card-single:hover .tool-logo-wrap img {
+                transform: scale(1.15) translateY(-3px);
             }
-            
+
+            /* Nama Tool */
+            .tool-name {
+                font-size: 15px; 
+                font-weight: 600;
+                color: #fff;
+                margin-bottom: 16px;
+                margin-top: 0;
+                letter-spacing: 0.5px;
+                word-wrap: break-word;
+                width: 100%;
+            }
+
+            /* Styling Badge Kemampuan */
+            .skill-badge {
+                font-size: 10px; 
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                padding: 5px 14px; 
+                border-radius: 30px;
+                display: inline-block;
+                border: 1px solid;
+            }
+
+            /* Warna Spesifik Level */
+            .badge-advanced {
+                color: #ffbd39; 
+                background-color: rgba(255, 189, 57, 0.1);
+                border-color: rgba(255, 189, 57, 0.3);
+            }
+            .badge-intermediate {
+                color: #4facfe; 
+                background-color: rgba(79, 172, 254, 0.1);
+                border-color: rgba(79, 172, 254, 0.3);
+            }
+            .badge-beginner {
+                color: #b0b0b0; 
+                background-color: rgba(176, 176, 176, 0.1);
+                border-color: rgba(176, 176, 176, 0.3);
+            }
+
+            /* Media Query untuk Tablet dan Mobile */
             @media (max-width: 767.98px) {
-                .skill-header {
-                    flex-direction: column;
-                    align-items: flex-start;
+                .skills-grid {
+                    grid-template-columns: repeat(auto-fill, minmax(115px, 1fr));
+                    gap: 12px;
                 }
-                .skill-logos-inline {
-                    margin-top: 8px;
+                
+                .skill-card-single {
+                    padding: 16px 10px;
+                    border-radius: 12px;
+                }
+                
+                .skill-card-single:hover {
+                    transform: translateY(-4px);
+                }
+
+                .tool-category {
+                    font-size: 8px;
+                    letter-spacing: 1px;
+                    margin-bottom: 12px;
+                }
+
+                .tool-logo-wrap {
+                    width: 38px;
+                    height: 38px;
+                    margin-bottom: 14px;
+                }
+
+                .tool-name {
+                    font-size: 13px;
+                    margin-bottom: 12px;
+                    word-wrap: break-word;
+                    width: 100%;
+                    line-height: 1.3;
+                }
+
+                .skill-badge {
+                    font-size: 8px;
+                    padding: 4px 10px;
+                    letter-spacing: 0.5px;
                 }
             }
         </style>
 
-        <div class="row">
-            <div class="col-md-6 animate-box">
-                <div class="progress-wrap ftco-animate">
-                    <div class="skill-header">
-                        <h3>Tech Stack Languages</h3>
-                        <div class="skill-logos-inline">
-                            <img src="images/js.png" alt="JS">
-                            <img src="images/css.png" alt="CSS">
-                            <img src="images/html.png" alt="HTML">
-                            <img src="images/php.png" alt="PHP">
-                            <img src="images/java.svg" alt="JAVA">
-                            <img src="images/py.webp" alt="PY">
-                            <img src="images/vb.png" alt="VB">
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="80"
-                        aria-valuemin="0" aria-valuemax="100" style="width:90%">
-                            <span>80%</span>
-                        </div>
-                    </div>
-                </div>
+        <div class="skills-grid ftco-animate">
+
+            <div class="skill-card-single">
+                <span class="tool-category">Language</span>
+                <div class="tool-logo-wrap"><img src="images/html.png" alt="HTML"></div>
+                <h3 class="tool-name">HTML5</h3>
+                <span class="skill-badge badge-advanced">Advanced</span>
             </div>
 
-            <div class="col-md-6 animate-box">
-                <div class="progress-wrap ftco-animate">
-                    <div class="skill-header">
-                        <h3>Graphic Design & Visual Video</h3>
-                        <div class="skill-logos-inline">
-                            <img src="images/pr.avif" alt="PR">
-                            <img src="images/ae.avif" alt="AE">
-                            <img src="images/ps.png" alt="PS">
-                            <img src="images/ai.png" alt="AI">
-                            <img src="images/au.png" alt="AU">
-                            <img src="images/an.png" alt="AN">
-                            <img src="images/figma.png" alt="FG">
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="95"
-                            aria-valuemin="0" aria-valuemax="100" style="width:95%">
-                            <span>95%</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="skill-card-single">
+                <span class="tool-category">Language</span>
+                <div class="tool-logo-wrap"><img src="images/css.png" alt="CSS"></div>
+                <h3 class="tool-name">CSS3</h3>
+                <span class="skill-badge badge-advanced">Advanced</span>
             </div>
 
-            <div class="col-md-6 animate-box">
-                <div class="progress-wrap ftco-animate">
-                    <div class="skill-header">
-                        <h3>Frameworks, SDK</h3>
-                        <div class="skill-logos-inline">
-                            <img src="images/react.webp" alt="RC">
-                            <img src="images/spring.png" alt="SP">
-                            <img src="images/laravel.png" alt="LR">
-                            <img src="images/tailwind.png" alt="TW">
-                            <img src="images/nodejs.webp" alt="ND">
-                            <img src="images/ec.png" alt="EC">
-                            <img src="images/cr.png" alt="Clr">
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="75"
-                            aria-valuemin="0" aria-valuemax="100" style="width:95%">
-                            <span>75%</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="skill-card-single">
+                <span class="tool-category">Language</span>
+                <div class="tool-logo-wrap"><img src="images/js.png" alt="JS"></div>
+                <h3 class="tool-name">JavaScript</h3>
+                <span class="skill-badge badge-advanced">Advanced</span>
             </div>
 
-            <div class="col-md-6 animate-box">
-                <div class="progress-wrap ftco-animate">
-                    <div class="skill-header">
-                        <h3>Database</h3>
-                        <div class="skill-logos-inline">
-                            <img src="images/mysql.png" alt="sql">
-                            <img src="images/supa.png" alt="SP">
-                            <img src="images/mongodb.webp" alt="MG">
-                            <img src="images/postgre.svg" alt="PW">
-                            <img src="images/SQL.png" alt="SQL">
-                        </div>
-                    </div>
-                    <div class="progress">
-                        <div class="progress-bar" role="progressbar" aria-valuenow="55"
-                            aria-valuemin="0" aria-valuemax="100" style="width:95%">
-                            <span>55%</span>
-                        </div>
-                    </div>
-                </div>
+            <div class="skill-card-single">
+                <span class="tool-category">Language</span>
+                <div class="tool-logo-wrap"><img src="images/php.png" alt="PHP"></div>
+                <h3 class="tool-name">PHP</h3>
+                <span class="skill-badge badge-intermediate">Intermediate</span>
             </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Language</span>
+                <div class="tool-logo-wrap"><img src="images/py.webp" alt="PY"></div>
+                <h3 class="tool-name">Python</h3>
+                <span class="skill-badge badge-intermediate">Intermediate</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Language</span>
+                <div class="tool-logo-wrap"><img src="images/java.svg" alt="JAVA"></div>
+                <h3 class="tool-name">Java</h3>
+                <span class="skill-badge badge-intermediate">Intermediate</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Language</span>
+                <div class="tool-logo-wrap"><img src="images/vb.png" alt="VB"></div>
+                <h3 class="tool-name">Visual Basic</h3>
+                <span class="skill-badge badge-beginner">Beginner</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Design</span>
+                <div class="tool-logo-wrap"><img src="images/ps.png" alt="PS"></div>
+                <h3 class="tool-name">Photoshop</h3>
+                <span class="skill-badge badge-advanced">Advanced</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Design Ilustrator</span>
+                <div class="tool-logo-wrap"><img src="images/ai.png" alt="AI"></div>
+                <h3 class="tool-name">Illustrator</h3>
+                <span class="skill-badge badge-advanced">Advanced</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Motion And VFX</span>
+                <div class="tool-logo-wrap"><img src="images/ae.avif" alt="AE"></div>
+                <h3 class="tool-name">After Effects</h3>
+                <span class="skill-badge badge-advanced">Advanced</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Video</span>
+                <div class="tool-logo-wrap"><img src="images/pr.avif" alt="PR"></div>
+                <h3 class="tool-name">Premiere Pro</h3>
+                <span class="skill-badge badge-advanced">Advanced</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">UI/UX</span>
+                <div class="tool-logo-wrap"><img src="images/figma.png" alt="FG"></div>
+                <h3 class="tool-name">Figma</h3>
+                <span class="skill-badge badge-intermediate">Intermediate</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Animation</span>
+                <div class="tool-logo-wrap"><img src="images/an.png" alt="AN"></div>
+                <h3 class="tool-name">Adobe Animate</h3>
+                <span class="skill-badge badge-intermediate">Intermediate</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Audio</span>
+                <div class="tool-logo-wrap"><img src="images/au.png" alt="AU"></div>
+                <h3 class="tool-name">Audition</h3>
+                <span class="skill-badge badge-Advanced">Advanced</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Framework</span>
+                <div class="tool-logo-wrap"><img src="images/react.webp" alt="RC"></div>
+                <h3 class="tool-name">React.js</h3>
+                <span class="skill-badge badge-intermediate">Intermediate</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Framework</span>
+                <div class="tool-logo-wrap"><img src="images/tailwind.png" alt="TW"></div>
+                <h3 class="tool-name">Tailwind CSS</h3>
+                <span class="skill-badge badge-advanced">Advanced</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Framework</span>
+                <div class="tool-logo-wrap"><img src="images/laravel.png" alt="LR"></div>
+                <h3 class="tool-name">Laravel</h3>
+                <span class="skill-badge badge-beginner">Beginner</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Environment</span>
+                <div class="tool-logo-wrap"><img src="images/nodejs.webp" alt="ND"></div>
+                <h3 class="tool-name">Node.js</h3>
+                <span class="skill-badge badge-intermediate">Intermediate</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Framework</span>
+                <div class="tool-logo-wrap"><img src="images/spring.png" alt="SP"></div>
+                <h3 class="tool-name">Spring Boot</h3>
+                <span class="skill-badge badge-intermediate">Intermediate</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Framework</span>
+                <div class="tool-logo-wrap"><img src="images/ec.png" alt="EC"></div>
+                <h3 class="tool-name">EC</h3>
+                <span class="skill-badge badge-intermediate">Intermediate</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Framework</span>
+                <div class="tool-logo-wrap"><img src="images/cr.png" alt="Clr"></div>
+                <h3 class="tool-name">CLR</h3>
+                <span class="skill-badge badge-beginner">Beginner</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Database</span>
+                <div class="tool-logo-wrap"><img src="images/mysql.png" alt="sql"></div>
+                <h3 class="tool-name">MySQL</h3>
+                <span class="skill-badge badge-intermediate">Intermediate</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Database</span>
+                <div class="tool-logo-wrap"><img src="images/postgre.svg" alt="PW"></div>
+                <h3 class="tool-name">PostgreSQL</h3>
+                <span class="skill-badge badge-intermediate">Intermediate</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Database</span>
+                <div class="tool-logo-wrap"><img src="images/mongodb.webp" alt="MG"></div>
+                <h3 class="tool-name">MongoDB</h3>
+                <span class="skill-badge badge-beginner">Beginner</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Database</span>
+                <div class="tool-logo-wrap"><img src="images/supa.png" alt="SP"></div>
+                <h3 class="tool-name">Supabase</h3>
+                <span class="skill-badge badge-intermediate">Intermediate</span>
+            </div>
+
+            <div class="skill-card-single">
+                <span class="tool-category">Database</span>
+                <div class="tool-logo-wrap"><img src="images/SQL.png" alt="SQL"></div>
+                <h3 class="tool-name">SQL</h3>
+                <span class="skill-badge badge-intermediate">Intermediate</span>
+            </div>
+
         </div>
     </div>
 </section>
- 
 
     <section class="ftco-section ftco-project" id="Projects">
     <div class="container">
@@ -800,16 +1001,14 @@ html, body {
                 <h1 class="big big-2">Projects</h1>
                 <h2 class="mb-4">Our Projects</h2>
             <p>This is an example of a project that I have developed and a project with a team specifically for web development.</p>
-          </div>
         </div>
-           <style>
-    /* Container utama agar sejajar dengan konten atas */
+        </div>
+        <style>
     .ftco-section-project {
-        padding: 60px 0;
+        padding: 15px 0;
         background: #000; /* Menyesuaikan tema gelap Anda */
     }
 
-    /* Row adjustment agar tidak ada sisa space di pinggir */
     .project-row {
         margin-left: -15px;
         margin-right: -15px;
@@ -817,7 +1016,6 @@ html, body {
         flex-wrap: wrap;
     }
 
-    /* Kotak Project Utama */
     .project-card {
         position: relative;
         width: 100%;
@@ -836,14 +1034,12 @@ html, body {
         transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
     }
 
-    /* Efek Hover: Kotak sedikit terangkat */
     .project-card:hover {
         transform: translateY(-10px);
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
         border-color: #f8b739; /* Warna border berubah saat hover */
     }
 
-    /* Overlay Gelap saat Hover */
     .project-overlay {
         position: absolute;
         top: 0;
