@@ -42,7 +42,7 @@
 
     /* --- HEADER ASLI --- */
     .ftco-section { padding: 40px 0; }
-    .project-heading-wrapper { position: relative; padding: 30px 0; text-align: center; }
+    .project-heading-wrapper { position: relative; padding: 20px 0; text-align: center; }
     .bg-text { font-size: 90px; font-weight: 900; color: rgba(255, 255, 255, 0.1); position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 0; pointer-events: none; }
     .main-title { font-size: 2.5rem; font-weight: 800; color: white; z-index: 2; position: relative; }
     .subtext { font-size: 1rem; color: #bdbdbd; z-index: 2; position: relative; margin: 10px auto; border-right: 2px solid #FFD700; width: fit-content; padding-right: 10px; }
@@ -268,7 +268,7 @@
   </style>
 </head>
 
-<body>
+<body oncontextmenu="return false;">
 
   <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
     <div class="container d-flex justify-content-between align-items-center">
@@ -300,6 +300,196 @@
         <h2 class="main-title">Our Projects</h2>
         <p class="subtext" id="typing-text"></p>
       </div>
+
+      <style>
+    /* Efek Glow untuk Card Creative Vision saat dipencet/diklik */
+    .glow-card {
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    .glow-card:active, .glow-card:focus {
+        box-shadow: 0 0 20px rgba(255, 189, 57, 0.8), 0 0 40px rgba(255, 189, 57, 0.4);
+        border-color: #ffbd39 !important;
+        transform: scale(0.98); /* Efek sedikit mengecil saat ditekan */
+        outline: none;
+    }
+
+    /* Styling tambahan untuk menyesuaikan contact-card agar berjejer rapi sebagai tombol */
+    .custom-btn-row .contact-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 20px;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 189, 57, 0.3);
+        border-radius: 8px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    .custom-btn-row .contact-card:hover {
+        background: rgba(255, 189, 57, 0.1);
+        border-color: #ffbd39;
+        transform: translateY(-3px);
+    }
+    .custom-btn-row h3 {
+        margin: 0;
+        color: #ffffff;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    .icon-btn {
+        /* Definisi ukuran di sini */
+        --icon-size: 40px; 
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 55px; /* Lebar area tombol */
+        height: 55px; /* Tinggi area tombol */
+        
+        /* Menghapus border dan latar belakang */
+        border: none;
+        background: transparent;
+        
+        /* Transition untuk animasi smooth */
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .icon-btn img {
+        /* Mengatur ukuran ikon berdasarkan variabel di atas */
+        width: var(--icon-size);
+        height: var(--icon-size);
+        object-fit: contain;
+        
+        /* Efek transition untuk scale saat hover */
+        transition: transform 0.3s ease;
+    }
+
+    .icon-btn:hover {
+        /* Tombol tetap transparan, tidak ada border */
+        background-color: transparent;
+        transform: translateY(-3px);
+    }
+
+    /* Efek hover pada gambar ikon: membesar (scale) */
+    .icon-btn:hover img {
+        transform: scale(1.2); /* Ikon membesar 20% saat tombol di-hover */
+    }
+.btn-hire-neon {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #ffbd39; /* Warna kuning tombol seperti di screenshot */
+    color: #000000; /* Warna teks hitam */
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 30px; /* Bentuk melengkung (pill) */
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: none;
+    
+    /* Efek Neon Pink/Ungu seperti di halaman utama */
+    box-shadow: 0 8px 25px rgb(149, 248, 0);
+}
+
+.btn-hire-neon:hover {
+    /* Pendaran neon membesar saat di-hover dan tombol agak naik */
+    box-shadow: 0 12px 35px rgba(255, 0, 247, 0.9), 0 0 15px rgba(157, 0, 255, 0.7);
+    transform: translateY(-3px);
+    -webkit-transform: translateY(-3px);
+    color: #000000; 
+}
+
+.btn-hire-neon:active {
+    /* Pendaran mengecil saat tombol diklik */
+    box-shadow: 0 5px 10px rgba(255, 0, 247, 0.7);
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
+}
+/* CSS Khusus Mobile (Layar di bawah 768px / HP) */
+    @media (max-width: 768px) {
+        /* Memperkecil padding kartu agar tidak penuh sesak */
+        .glow-card {
+            padding: 10px !important;
+        }
+
+        /* Memperkecil judul di HP agar tidak patah/terpotong */
+        .glow-card h3 {
+            font-size: 1.1em !important;
+        }
+
+        /* Memperkecil paragraf agar teks tidak terlalu panjang */
+        .glow-card p {
+            font-size: 0.8em !important;
+            margin-top: 5px !important;
+        }
+
+        /* Memperkecil gambar agar lebih proporsional di layar kecil */
+        .glow-card img {
+            max-width: 280px !important; /* Maksimal gambar cuma 100px di HP */
+            margin-bottom: 10px !important;
+        }
+        
+        /* Memberikan jarak antar kolom */
+        .col-md-5 {
+            margin-bottom: 20px;
+        }
+    }
+</style>
+
+<section class="ftco-section ftco-no-pb" id="About-Illustrator">
+    <div class="container">
+        <div class="row align-items-center" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+            
+          <div class="col-md-5" style="flex: 1; min-width: 300px; padding: 0;">
+              <div class="ftco-animate glow-card" tabindex="0" style="width: 100%; aspect-ratio: 1 / 1; background-color: rgba(255, 255, 255, 0.03); border-radius: 16px; border: 1px solid rgba(255, 189, 57, 0.2); padding: 20px; display: flex; flex-direction: column; justify-content: center; align-items: center; overflow: hidden; position: relative; box-sizing: border-box;">
+                  
+                  <img src="images/view.jpeg" alt="My Artwork" style="width: 100%; max-width: 320px; height: auto; margin-bottom: 20px; object-fit: contain;">
+                  
+                  <h3 style="color: #ffbd39; font-weight: 700; margin: 0; font-size: 1.5em; text-align: center;">Creative Vision</h3>
+                  <p style="color: rgba(255,255,255,0.6); font-size: 0.9em; margin-top: 10px; text-align: center; line-height: 1.4; width: 90%;">Transforming ideas into digital masterpieces.</p>
+              </div>
+          </div>
+
+            <div class="col-md-6" style="flex: 1.5; min-width: 300px; padding: 0;">
+                <div class="heading-section ftco-animate">
+                    <h2 class="mb-4" style="color: #ffffff; font-weight: 700; font-size: 2.5em; line-height: 1.2;">
+                        Professional <span style="color: #ffbd39;">Illustrator & Designer</span>
+                    </h2>
+                    
+                    <p style="text-align: justify; line-height: 1.8; color: rgba(255, 255, 255, 0.8); font-size: 1.05em; margin-bottom: 20px;">
+                        I am a dedicated digital artist specializing in bringing ideas to life through compelling visual storytelling. I partner with clients to craft memorable <strong>brand identities</strong>, highly detailed <strong>custom illustrations</strong>, and engaging <strong>mascot designs</strong> that perfectly resonate with their target audience.
+                    </p>
+
+                    <p style="text-align: justify; line-height: 1.8; color: rgba(255, 255, 255, 0.8); font-size: 1.05em; margin-bottom: 35px;">
+                        My focus on premium aesthetics and deep attention to detail ensures that every project not only looks stunning but also serves a strategic purpose. Beyond direct client work, I am a proud contributor to <strong>Adobe Stock</strong>and <strong>Lynk.id</strong>, providing high-quality digital assets utilized by creators and businesses worldwide.
+                    </p>
+
+                    <div class="custom-btn-row" style="display: flex; flex-wrap: wrap; gap: 15px;">
+                        
+                    <div style="display: flex; align-items: center; gap: 15px; flex-wrap: wrap;">
+                    
+                    <a href="mailto:diputviean109@gmail.com" class="btn-hire-neon">
+                        Hire Me
+                    </a>
+                    
+                  <a href="https://contributor.stock.adobe.com/" class="icon-btn" title="Adobe Stock">
+                      <img src="images/stock.png" alt="Adobe Stock" style="width: 80px; height: 80px; object-fit: contain;">
+                  </a>
+
+                    <a href="https://lynk.id/disableflow" class="icon-btn" title="Lynk.id">
+                        <img src="images/lynk'.png" alt="Lynk.id">
+                    </a>
+
+                </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
       <div class="row" id="project-row">
         </div>
