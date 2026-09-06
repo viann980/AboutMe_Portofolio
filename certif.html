@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <style>
+<style>
     /* CSS Dasar */
     * { box-sizing: border-box; }
     body { background: #000; color: white; font-family: 'Poppins', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
@@ -21,7 +21,22 @@
     
     /* Heading Styles */
     .project-heading-wrapper { position: relative; padding-top: 5px; padding-bottom: 2px; }
-    .bg-text { font-size: 120px; font-weight: 900; color: rgba(46, 46, 46, 0.536); position: absolute; top: 0; left: 50%; transform: translateX(-50%); z-index: 0; pointer-events: none; user-select: none; line-height: 1; white-space: nowrap; }
+    .bg-text { 
+        font-size: 120px; 
+        font-weight: 900; 
+        color: rgba(95, 95, 95, 0.3); 
+        position: absolute; 
+        top: 50%; 
+        left: 50%; 
+        transform: translate(-50%, -50%); 
+        z-index: 0; 
+        pointer-events: none; 
+        user-select: none; 
+        line-height: 1; 
+        white-space: nowrap; 
+        width: 100%;
+        text-align: center;
+    }
     .main-title { font-size: 2.8rem; font-weight: 800; color: white; z-index: 2; position: relative; }
     .subtext { font-size: 1rem; color: #bdbdbd; z-index: 2; position: relative; margin: 10px auto 0; min-height: 24px; border-right: 2px solid #FFD700; width: fit-content; text-align: center; padding-right: 5px; }
 
@@ -29,158 +44,114 @@
     @keyframes blink { 50% { border-color: transparent; } }
     .subtext { animation: blink 0.7s step-end infinite; }
 
-    /* Style Sertifikat (Kanan-Kiri di Desktop, Tengah di Mobile) */
-    .cert-card { max-width: 450px; width: 100%; transition: transform 0.3s ease; }
-    .cert-img { border-radius: 8px; border: 2px solid #333; box-shadow: 0 10px 20px rgba(0,0,0,0.5); width: 100%; }
-
-    @media (max-width: 768px) {
-      .bg-text { font-size: 80px; }
-      .main-title { font-size: 2rem; }
-      .cert-card { max-width: 100%; }
-      .text-md-left { text-align: center !important; }
+    /* Custom Hamburger Icon (Tiga Garis Kuning) */
+    .navbar-toggler-icon-custom {
+        display: inline-block;
+        width: 20px;
+        height: 2px;
+        background-color: #ffbd39;
+        position: relative;
+        vertical-align: middle;
     }
 
-    @media (min-width: 768px) {
-      .cert-card:hover { transform: translateY(-5px); }
+    .navbar-toggler-icon-custom::before,
+    .navbar-toggler-icon-custom::after {
+        content: "";
+        width: 20px;
+        height: 2px;
+        background-color: #ffbd39;
+        position: absolute;
+        left: 0;
     }
 
-    .bg-text { 
-      /* Nilai Standar untuk Desktop (Ukuran Statis) */
-      font-size: 120px; 
-      font-weight: 900; 
-      color: rgba(95, 95, 95, 0.3); 
-      position: absolute; 
-      top: 50%; 
-      left: 50%; 
-      transform: translate(-50%, -50%); 
-      z-index: 0; 
-      pointer-events: none; 
-      user-select: none; 
-      line-height: 1; 
-      white-space: nowrap; 
-      width: 100%;
-      text-align: center;
+    .navbar-toggler-icon-custom::before { top: -6px; }
+    .navbar-toggler-icon-custom::after { bottom: -6px; }
+
+    .navbar-toggler:focus {
+        outline: none !important;
+        box-shadow: none !important;
     }
 
-    .main-title { 
-      font-size: 2.8rem; 
-      font-weight: 800; 
-      color: white; 
-      z-index: 2; 
-      position: relative; 
+    .navbar-toggler {
+        background-color: #0c0c0c !important;
+        transition: 0.3s;
+    }
+
+    .navbar-toggler:hover {
+        background-color: #1a1a1a !important;
+    }
+
+    /* Memaksa gambar sertifikat memiliki rasio aspek yang sama (Landscape) */
+    .cert-img {
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: 8px;
+        border: 2px solid #333;
+        width: 100%;
+        transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .cert-info h4 {
+        min-height: 50px; 
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-bottom: 2px;
+    }
+
+    /* --- EFEK HOVER (DESKTOP) & ACTIVE (MOBILE) YANG KONSISTEN --- */
+    
+    /* 1. Aturan utama kartu (wajib display block/inline-block agar transform berjalan di flexbox) */
+    .cert-card {
+        max-width: 450px;
+        width: 100%;
+        display: block;
+        position: relative;
+        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* 2. Efek Angkat saat kursor mendekat di Desktop (:hover) atau disentuh di HP (:active) */
+    .cert-card:hover, 
+    .cert-card:active {
+        transform: translateY(-12px) scale(1.02);
+        z-index: 50;
+    }
+
+    /* 3. Efek Bayangan & Border Kuning pada Gambar Sertifikat Landscape */
+    .cert-card:hover .cert-img,
+    .cert-card:active .cert-img {
+        box-shadow: 0 10px 25px rgba(255, 189, 57, 0.4) !important;
+        border-color: #ffbd39db !important;
+    }
+
+    /* 4. Khusus untuk wadah pembungkus portrait c10 (mengatasi inline style background: #1a1a1a) */
+    .cert-card div[style*="background: #1a1a1a"] {
+        transition: box-shadow 0.3s ease, border 0.3s ease;
+        border: 2px solid #333; /* Memberikan border awal agar ukurannya tidak bergeser saat berubah warna */
+    }
+
+    .cert-card:hover div[style*="background: #1a1a1a"],
+    .cert-card:active div[style*="background: #1a1a1a"] {
+        box-shadow: 0 10px 25px rgba(255, 189, 57, 0.4) !important;
+        border: 2px solid #ffbd39 !important;
     }
 
     /* --- RESPONSIVE FIX --- */
-
-    /* Tablet & Mobile (Layar di bawah 992px) */
     @media (max-width: 991px) {
-      .bg-text { 
-        /* Mulai gunakan VW di sini agar fleksibel mengikuti lebar layar */
-        font-size: 12vw; 
-      }
+        .bg-text { font-size: 12vw; }
     }
 
-    /* Khusus Mobile (Layar di bawah 768px) */
     @media (max-width: 767px) {
-      .bg-text { 
-        font-size: 14vw; /* Nilai yang sudah kamu anggap oke di mobile */
-        top: 50%; 
-      }
-      .main-title { 
-        font-size: 1.8rem; 
-      }
-      .cert-card { max-width: 100%; }
-      .text-md-left { text-align: center !important; }
+        .bg-text { font-size: 14vw; top: 50%; }
+        .main-title { font-size: 1.8rem; }
+        .cert-card { max-width: 100%; }
+        .text-md-left { text-align: center !important; }
     }
 
-    /* Untuk layar HP yang sangat kecil agar tidak terpotong sama sekali */
     @media (max-width: 480px) {
-      .bg-text {
-        font-size: 13vw;
-      }
+        .bg-text { font-size: 13vw; }
     }
-    /* Custom Hamburger Icon (Tiga Garis Kuning) */
-.navbar-toggler-icon-custom {
-    display: inline-block;
-    width: 20px;
-    height: 2px;
-    background-color: #ffbd39;
-    position: relative;
-    vertical-align: middle;
-}
-
-.navbar-toggler-icon-custom::before,
-.navbar-toggler-icon-custom::after {
-    content: "";
-    width: 20px;
-    height: 2px;
-    background-color: #ffbd39;
-    position: absolute;
-    left: 0;
-}
-
-.navbar-toggler-icon-custom::before { top: -6px; }
-.navbar-toggler-icon-custom::after { bottom: -6px; }
-
-/* Menghilangkan outline biru bawaan browser saat diklik */
-.navbar-toggler:focus {
-    outline: none !important;
-    box-shadow: none !important;
-}
-
-/* Memastikan tombol terlihat serasi dengan screenshot */
-.navbar-toggler {
-    background-color: #0c0c0c !important; /* Background hitam gelap seperti di gambar */
-    transition: 0.3s;
-}
-
-.navbar-toggler:hover {
-    background-color: #1a1a1a !important;
-}
-/* Memaksa gambar sertifikat memiliki rasio aspek yang sama (Landscape) */
-.cert-img {
-    aspect-ratio: 4 / 3; /* Mengunci rasio agar semua kotak sama besar */
-    object-fit: cover;   /* Memastikan gambar memenuhi kotak tanpa gepeng */
-    border-radius: 8px;
-    border: 2px solid #333;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-    width: 100%;
-}
-
-/* Mengunci tinggi judul agar sejajar jika ada teks yang terlalu panjang */
-.cert-info h4 {
-    min-height: 50px; 
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    margin-bottom: 2px;
-}
-/* --- EFEK KHUSUS MOBILE (Tidak Ganggu Desktop) --- */
-
-@media (max-width: 767px) {
-    /* 1. Berikan transisi pada kartu agar gerakan angkatnya halus */
-    .cert-card {
-        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
-        -webkit-tap-highlight-color: transparent; /* Hilangkan kotak biru bawaan HP saat ditekan */
-    }
-
-    /* 2. Efek saat jari menyentuh/menekan kartu (Pop Up ke atas) */
-    .cert-card:active {
-        transform: translateY(-12px) scale(1.02); /* Mengangkat 12px ke atas dan membesar 2% */
-        z-index: 10; /* Agar kartu yang diangkat berada di depan kartu lainnya */
-    }
-
-    /* 3. Memberikan efek bayangan & border kuning saat kartu "melayang" di mobile */
-    .cert-card:active .cert-img {
-        box-shadow: 0 10px 25px rgba(255, 189, 57, 0.4) !important;
-    }
-
-    /* 4. Khusus untuk sertifikat portrait (c10) agar container hitamnya ikut bereaksi */
-    .cert-card:active div[style*="background: #1a1a1a"] {
-        box-shadow: 0 10px 25px rgba(255, 189, 57, 0.4) !important;
-        transform: translateY(0); /* Menjaga konsistensi posisi dalam container */
-    }
-}
 </style>
 </head>
 
@@ -217,7 +188,7 @@
           <img src="images/c5.jpg" class="img-fluid cert-img">
           <div class="cert-info mt-3 text-center text-md-left">
             <h5 style="color: #ffbd39; font-weight: 500;">TOEFL Course</h5>
-            <p style="color: #bbb; font-size: 0.9rem;">TOEFL - Prediction Test Engglish</p>
+            <p style="color: #bbb; font-size: 0.9rem;">TOEFL - Prediction Test English</p>
           </div>
         </div>
       </div>
@@ -228,6 +199,26 @@
           <div class="cert-info mt-3 text-center text-md-left">
             <h5 style="color: #ffbd39; font-weight: 500;">Pengembangan Platform Pelajaran Terintegrasi AI</h5>
             <p style="color: #bbb; font-size: 0.9rem;">Focus Group Discussion - Insan AI</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-start">
+        <div class="cert-card">
+          <img src="images/hackhaton.jpeg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #ffbd39; font-weight: 500;">Essential Training Program DIGDAYA X HACKATHON</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">Lomba Hackathon - Pusat Inovasi Digital Indonesia </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-start">
+        <div class="cert-card">
+          <img src="images/idweb.jpeg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #ffbd39; font-weight: 500;">Web Design Competition 2026</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">Lomba Web Design - IDwebhost</p>
           </div>
         </div>
       </div>
@@ -468,6 +459,46 @@
           <div class="cert-info mt-3 text-center text-md-left">
             <h5 style="color: #ffbd39; font-weight: 500;">Belajar Back End Pemula dengan Python - DICODING</h5>
             <p style="color: #bbb; font-size: 0.9rem;">SKK - Belajar Back End Pemula dengan Python</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-start">
+        <div class="cert-card">
+          <img src="images/js srtif.jpg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #ffbd39; font-weight: 500;">Belajar Dasar Pemrograman JavaScript - DICODING</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">SKK - Belajar Dasar Pemrograman JavaScript</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-start">
+        <div class="cert-card">
+          <img src="images/membuat front end web.jpg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #ffbd39; font-weight: 500;">Belajar Membuat Front End Web Untuk Pemula - DICODING</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">SKK - Belajar Membuat Front End Web Untuk Pemula</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-start">
+        <div class="cert-card">
+          <img src="images/strategi pengembangan diri dicoding.jpg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #ffbd39; font-weight: 500;">Belajar Strategi Pengembangan Diri - DICODING</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">SKK - Belajar Strategi Pengembangan Diri</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-5 mb-5 d-flex justify-content-center justify-content-md-start">
+        <div class="cert-card">
+          <img src="images/react dicoding.jpg" class="img-fluid cert-img">
+          <div class="cert-info mt-3 text-center text-md-left">
+            <h5 style="color: #ffbd39; font-weight: 500;">Belajar Membuat Aplikasi Web Dengan React - DICODING</h5>
+            <p style="color: #bbb; font-size: 0.9rem;">SKK - Belajar Membuat Aplikasi Web Dengan React</p>
           </div>
         </div>
       </div>
