@@ -255,11 +255,21 @@ html, body {
         display: flex !important;
         flex-basis: auto;
     }
+    .btn-group-custom {
+    display: flex;
+    flex-direction: row;
+    gap: 10px; /* Jarak antar tombol */
+    align-items: center;
+    }
+
+    .btn-group-custom p {
+    margin-bottom: 0; /* Menghilangkan margin bawah bawaan p */
+    }
 }
+
     </style>
 
   </head>
-  <body oncontextmenu="return false;">
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
       
  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
@@ -341,7 +351,7 @@ html, body {
                         <h2 class="mb-4"><span id="typed-job"></span></h2>
                         <p>
                             <a href="https://github.com/viann980" class="btn btn-primary py-3 px-4">My Program Project</a> 
-                            <a href="unduh/CV - Muhamad Luthfian New 2026.pdf" class="btn btn-white btn-outline-white py-3 px-4">CV</a>
+                            <a href="unduh/CV - Muhamad Luthfian Fiks .pdf" class="btn btn-white btn-outline-white py-3 px-4">CV</a>
                         </p>
                     </div>
                   </div>
@@ -397,15 +407,19 @@ html, body {
                     </ul>
                   </div>
                 </div>
-              <div class="counter-wrap ftco-animate d-flex mt-md-3">
-              <div class="text">
-                <p class="mb-4">
-                    <span class="number" data-number="19">0</span>
+                <div class="counter-wrap ftco-animate d-flex mt-md-3">
+                <div class="text">
+                    <p class="mb-4">
+                    <span class="number" data-number="23">0</span>
                     <span>Project complete</span>
-                </p>
-                <p><a href="https://github.com/viann980" class="btn btn-primary py-3 px-3">Project Me</a></p>
-              </div>
-              </div>
+                    </p>
+                    <!-- Tambahkan class 'btn-group-custom' atau bungkus p-nya -->
+                    <div class="btn-group-custom">
+                    <p><a href="https://github.com/viann980" class="btn btn-primary py-3 px-3">Project Me/GitHub</a></p>
+                    <p><a href="jurnal.html" class="btn btn-primary py-3 px-3">Riset Publikasi/Jurnal</a></p>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
         </div>
@@ -1190,7 +1204,7 @@ html, body {
             <div class="col-md-4">
                 <div class="project-card" style="background-image: url('images/webproject3.png');">
                     <div class="project-overlay">
-                        <h3><a href="http://insan-ai.id/">Insan AI Learning</a></h3>
+                        <h3><a href="https://github.com/viann980/HMSE">Insan AI Learning</a></h3>
                         <span>Web Design</span>
                     </div>
                 </div>
@@ -1246,6 +1260,33 @@ html, body {
                     <div class="project-overlay">
                         <h3><a href="https://kasir-pos-nine.vercel.app/kasir">Kasir Point Of Sale System</a></h3>
                         <span>Web Application</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="project-card" style="background-image: url('images/todolist.jpg');">
+                    <div class="project-overlay">
+                        <h3><a href="https://github.com/viann980/Todolist_shcedule_Mobile">Todolist Mobile App Flutter</a></h3>
+                        <span>Mobile App Flutter</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="project-card" style="background-image: url('images/neurocam.jpg');">
+                    <div class="project-overlay">
+                        <h3><a href="https://github.com/viann980/NeuroCam">NeuroCam - Sistem Skrining pendeteksi Stroke</a></h3>
+                        <span>AI Nirsentuh & rPPG</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="project-card" style="background-image: url('images/jagadana.jpg');">
+                    <div class="project-overlay">
+                        <h3><a href="https://github.com/viann980/prototype-jagadana-pidi-2026">JagaDana - Pendeteksi Qris Palsu</a></h3>
+                        <span>Sistem Keamanan Digital</span>
                     </div>
                 </div>
             </div>
