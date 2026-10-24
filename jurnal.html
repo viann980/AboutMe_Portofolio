@@ -82,38 +82,63 @@
     }
 
     /* Style Kartu Jurnal / Riset */
-    .journal-card {
-        background: #121212;
-        border: 2px solid #333;
-        border-radius: 12px;
-        padding: 25px;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease, border-color 0.3s ease;
-        -webkit-tap-highlight-color: transparent;
-    }
+.journal-card {
+    background: linear-gradient(145deg, #121212 0%, #0a0a0a 100%);
+    border: 1px solid rgba(255, 189, 57, 0.15);
+    border-radius: 16px;
+    padding: 28px 24px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-tap-highlight-color: transparent;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
 
-    .journal-card:hover, 
-    .journal-card:active {
-        transform: translateY(-8px) scale(1.01);
-        box-shadow: 0 10px 25px rgba(255, 189, 57, 0.3) !important;
-        border-color: #ffbd39 !important;
-        z-index: 10;
-    }
+/* Aksesori Garis Accent Gold Atas */
+.journal-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ffbd39, transparent);
+    opacity: 0.3;
+    transition: opacity 0.4s ease;
+}
 
-    .journal-badge {
-        display: inline-block;
-        background-color: rgba(255, 189, 57, 0.15);
-        color: #ffbd39;
-        font-size: 0.8rem;
-        font-weight: 600;
-        padding: 4px 12px;
-        border-radius: 20px;
-        border: 1px solid rgba(255, 189, 57, 0.3);
-        margin-bottom: 15px;
-    }
+/* Hover & Active Effects */
+.journal-card:hover, 
+.journal-card:active {
+    transform: translateY(-8px);
+    border-color: rgba(255, 189, 57, 0.5) !important;
+    box-shadow: 0 16px 35px rgba(255, 189, 57, 0.15), 0 0 15px rgba(255, 189, 57, 0.1) !important;
+    z-index: 2;
+}
+
+.journal-card:hover::before {
+    opacity: 1;
+}
+
+/* Badge Style */
+.journal-badge {
+    display: inline-block;
+    background: rgba(255, 189, 57, 0.1);
+    color: #ffbd39;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 5px 14px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 189, 57, 0.3);
+    margin-bottom: 18px;
+    text-transform: uppercase;
+    backdrop-filter: blur(4px);
+}
 
     .journal-title {
         color: #fff;
@@ -171,7 +196,6 @@
   </style>
 </head>
 
-<body oncontextmenu="return false;">
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-black">
     <div class="container">
@@ -201,7 +225,24 @@
 
       <div class="row d-flex justify-content-center">
 
-        <div class="col-12 col-md-6 mb-4 d-flex">
+        <div class="col-12 col-md-6 mb-4 pb-2 d-flex">
+          <div class="journal-card">
+            <div>
+              <span class="journal-badge">Laporan Ilmiah Project Work</span>
+              <h3 class="journal-title">Karya Ilmiah Project Work - Iklan Layanan Masyarakat "Go-Green" Berbasis Motion Graphics</h3>
+              <div class="journal-meta">
+                <span><strong>Lisensi:</strong> Muhamad Luthfian, Author</span><br>
+                <span><strong>Penerbit:</strong> SEKOLAH MENENGAH KEJURUAN (SMK) BINA AM MA’MUR(2020)</span>
+              </div>
+              <p class="journal-abstract">
+                Project Work, ILM Report, SMK Bina Am Ma’mur · Vol. 1 No. 1 (2020)
+              </p>
+            </div>
+            <a href="unduh/Laporan PW luthfi.pdf" target="_blank" class="btn-journal">Baca Artikel Project Work</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-4 pb-2 d-flex">
           <div class="journal-card">
             <div>
               <span class="journal-badge">Jurnal Nasional</span>
@@ -218,7 +259,24 @@
           </div>
         </div>
 
-         <div class="col-12 col-md-6 mb-4 d-flex">
+        <div class="col-12 col-md-6 mb-4 pb-2 d-flex">
+          <div class="journal-card">
+            <div>
+              <span class="journal-badge">Jurnal Nasional</span>
+              <h3 class="journal-title">SYSTEMATIC REVIEW OF ARTIFICIAL INTELLIGENCE IMPLEMENTATION FOR CONTINUOUS LEARNING: BENEFITS, IMPACTS, AND CHALLENGES</h3>
+              <div class="journal-meta">
+                <span><strong>Lisensi:</strong> Muhamad Luthfian, Co-Author</span><br>
+                <span><strong>Penerbit:</strong> ejournal.nusamandiri.ac.id, Sinta 2 (2025)</span>
+              </div>
+              <p class="journal-abstract">
+                JITK — Jurnal Ilmu pengetahuan dan Teknologi Komputer (Sinta 2) · Vol. 11 No. 3 (Februari 2026)
+              </p>
+            </div>
+            <a href="https://ejournal.nusamandiri.ac.id/index.php/jitk/article/view/7583" target="_blank" class="btn-journal">Baca Artikel Jurnal</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-4 pb-2 d-flex">
           <div class="journal-card">
             <div>
               <span class="journal-badge">Jurnal Nasional</span>
@@ -235,34 +293,85 @@
           </div>
         </div>
 
-         <div class="col-12 col-md-6 mb-4 d-flex">
+        <div class="col-12 col-md-6 mb-4 pb-2 d-flex">
+          <div class="journal-card">
+            <div>
+              <span class="journal-badge">Jurnal Nasional</span>
+              <h3 class="journal-title">MONITORING DAN EVALUASI PEMANFAATAN WEB APLIKASI PEMBELAJARAN TERINTEGRASI ARTIFICIAL INTELLIGENCE UNTUK MENINGKATKAN MOTIVASI DAN KETERLIBATAN SISWA</h3>
+              <div class="journal-meta">
+                <span><strong>Lisensi:</strong> Muhamad Luthfian, Co-Author</span><br>
+                <span><strong>Penerbit:</strong> abdimas.unipem.ac.id (2025)</span>
+              </div>
+              <p class="journal-abstract">
+                Jurnal Abdimas Universitas Insan Pembangunan Indonesia · Vol. 4 No. 1 (Februari 2026), hlm. 62–68
+              </p>
+            </div>
+            <a href="https://abdimas.unipem.ac.id/abdimas/article/view/155" target="_blank" class="btn-journal">Baca Artikel Jurnal</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-4 pb-2 d-flex">
+          <div class="journal-card">
+            <div>
+              <span class="journal-badge">Jurnal Nasional</span>
+              <h3 class="journal-title">Sosialisasi dan Ujicoba Aplikasi Pembelajaran Berbasis Artificial Intelligence di SMA Citra Islami Tangerang</h3>
+              <div class="journal-meta">
+                <span><strong>Lisensi:</strong> Muhamad Luthfian, Co-Author</span><br>
+                <span><strong>Penerbit:</strong> ejournal.poltekharber.ac.id (2025)</span>
+              </div>
+              <p class="journal-abstract">
+                Jurnal Abdimas PHB : Jurnal Pengabdian Masyarakat · Vol. 9 No. 1 (2026)
+              </p>
+            </div>
+            <a href="https://ejournal.poltekharber.ac.id/index.php/abdimas/article/view/9893" target="_blank" class="btn-journal">Baca Artikel Jurnal</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-4 pb-2 d-flex">
           <div class="journal-card">
             <div>
               <span class="journal-badge">Jurnal Nasional</span>
               <h3 class="journal-title">Pendampingan Testing Aplikasi Pembelajaran Terintegrasi Artificial Intelligence untuk Meningkatkan Keterlibatan Siswa di Kabupaten Tangerang</h3>
               <div class="journal-meta">
                 <span><strong>Lisensi:</strong> Muhamad Luthfian, Co-Author</span><br>
-                <span><strong>Penerbit:</strong> journal.proletargroup.org (2025)</span>
+                <span><strong>Penerbit:</strong> e-journal.iahn-gdepudja.ac.id (2025)</span>
               </div>
               <p class="journal-abstract">
-                Proletarian : Community Service Development Journal · Vol. 3 No. 2 (November 2025), hlm. 49–55
+                Dharma Sevanam : Jurnal Pengabdian Masyarakat · Vol. 4 No. 2 (Desember 2025), hlm. 182–191
               </p>
             </div>
-            <a href="https://journal.proletargroup.org/index.php/Proletariancomdev/id/article/view/297" target="_blank" class="btn-journal">Baca Artikel Jurnal</a>
+            <a href="https://e-journal.iahn-gdepudja.ac.id/index.php/DS/article/view/3127" target="_blank" class="btn-journal">Baca Artikel Jurnal</a>
           </div>
         </div>
 
-        <div class="col-12 col-md-6 mb-4 d-flex">
+        <div class="col-12 col-md-6 mb-4 pb-2 d-flex">
+          <div class="journal-card">
+            <div>
+              <span class="journal-badge">Jurnal Nasional</span>
+              <h3 class="journal-title">SHARING SESSION DAN PENDAMPINGAN PEMBUATAN SISTEM PEMBELAJARAN BERBASIS ARTIFICIAL INTELLIGENCE UNTUK GURU DAN SISWA SMA DI PANONGAN TANGERANG</h3>
+              <div class="journal-meta">
+                <span><strong>Lisensi:</strong> Muhamad Luthfian, Co-Author</span><br>
+                <span><strong>Penerbit:</strong> e-journal.iahn-gdepudja.ac.id (2025)</span>
+              </div>
+              <p class="journal-abstract">
+                IKA BINA EN PABOLO : Pengabdian kepada Masyarakat · Vol. 6 No. 1 (2025)
+              </p>
+            </div>
+            <a href="https://jurnal.ulb.ac.id/index.php/ikabinaenpabolo/article/view/8449" target="_blank" class="btn-journal">Baca Artikel Jurnal</a>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 mb-4 pb-2 d-flex">
           <div class="journal-card">
             <div>
               <span class="journal-badge">Under Review / Ongoing</span>
-              <h3 class="journal-title">Judul Riset atau Publikasi Jurnal Kedua</h3>
+              <h3 class="journal-title">Skripsi Muhamad Luthfian</h3>
               <div class="journal-meta">
                 <span><strong>Penulis:</strong> Muhamad Luthfian</span><br>
-                <span><strong>Status:</strong> Submitted to Scientific Journal (2026)</span>
+                <span><strong>Status:</strong> Submitted to Scientific (2026)</span>
               </div>
               <p class="journal-abstract">
-                Deskripsi singkat tentang fokus studi, algoritma, atau sistem yang sedang dikembangkan dan diteliti.
+                Deskripsi singkat tentang fokus studi, algoritma, atau sistem yang sedang dikembangkan dan diteliti (Skripsi Universitas Insan Pembangunan Indonesia).
               </p>
             </div>
             <a href="#" class="btn-journal" style="background-color: #333; color: #888; cursor: not-allowed;">PDF Upcoming</a>
